@@ -1,11 +1,11 @@
 # Snappy Docs
-This repository contains the documentation of snappy's APIs and inner workings.
+Este repositorio contiene la documentación de las API y el funcionamiento interno de Snappy.
 
-### Important Notice
-*These are the internal docs of Snappy, please do not share these documents or any of their information without proper authorization as they contain the workings of the entire Snappy platform*
+### Noticia importante
+*Estos son los documentos internos de Snappy, no comparta estos documentos ni ninguna de su información sin la debida autorización, ya que contienen el funcionamiento de toda la plataforma Snappy*
 
 # Welcome
-If you've just begun working at Snappy, welcome! 🎉🎉
+Si empezaste a trabajar en Snappy, ¡bienvenido! 🎉🎉
 
 # Documentation Index
 - BotBuilder
