@@ -20,4 +20,15 @@ Esto significa que, una vez le enviamos un parámetro a un paquete, dicho dato p
 2) Asignarle un nombre al paquete (máximo 22 caracteres). El nombre no puede finalizar con un espacio o el sistema lo tomará como invalido.
 3) Agregar los elementos que se deseen para el paquete en cuestión: nodos, contextos, etc. (los elementos se desarrollarán en las secciones siguientes).
 
+![package](/images/botbuilder/package/nodoRespuesta.gif)
+
+# ¿Cómo publicar un Package?
+
+Para que se pueda utilizar un Package es necesario publicarlo, es decir hacer un deploy a la versión deseada. Al hacer deploy, el paquete queda disponible para utilizar en un brain.
+
+☝️Para hacer deploy, el paquete debe contener al menos un nodo. Esto aplica también a la estructura principal.
+
+Una vez que el package está publicado, se puede acceder a él desde un brain a través de un nodo específico, un nodo Package (nodo Paquete).
+
+En principio, solo se podrá acceder a un paquete desde el brain de la tienda a la que ambos pertenecen. Para que un paquete esté accesible a otras tiendas, se lo debe configurar como Public Package (Paquete público), desde el apartado Settings (Configuración).
 
