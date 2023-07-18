@@ -20,7 +20,7 @@ Esto significa que, una vez le enviamos un parámetro a un paquete, dicho dato p
 2) Asignarle un nombre al paquete (máximo 22 caracteres). El nombre no puede finalizar con un espacio o el sistema lo tomará como invalido.
 3) Agregar los elementos que se deseen para el paquete en cuestión: nodos, contextos, etc. (los elementos se desarrollarán en las secciones siguientes).
 
-![package](/images/botbuilder/package/nodoRespuesta.gif)
+![package](/images/botbuilder/package/crearPackage.gif)
 
 # ¿Cómo publicar un Package?
 
