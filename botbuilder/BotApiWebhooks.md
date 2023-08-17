@@ -220,6 +220,7 @@
  | conversationUuid | String | false    | conversationUuid that is saved in the context |
 
 **Note:** Use this as an output instead of webhook to prevent your bot builder from sending a message after conversation ended
+
  ---
  ### onlineAssistants
  #### Parameters
