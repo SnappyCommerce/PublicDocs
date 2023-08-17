@@ -215,7 +215,7 @@
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "updateContact"                               |
+ | functionName     | String |   true   | "endConversation"                               |
  | botUuid          | String | true     | botUuid that is saved in the context          |
  | conversationUuid | String | false    | conversationUuid that is saved in the context |
 
