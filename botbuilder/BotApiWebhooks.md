@@ -250,6 +250,148 @@
 		"invoiceUrl": "www.google.com"
 	}
  ```
+ ---
+ ### fetchProducts
+ #### Parameters
+ | Parameter        | Type   | Description                            |
+ | ---------------  | ------ | ---------------------------------------|
+ | functionName     | String | "fetchProducts"                        |
+ | botUuid          | String | botUuid that is saved in the context   |
+ | query            | String | Search products by key words           |
+ | categoryId       | String | Search products by category            |
+ | subCategoryId    | String | Search products by sub category        |
+
+ #### Result Example
+ ```json
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Test product",
+      "description": "Test description",
+      "link": "https://www.test.com.ar/1/p",
+      "products": [
+        {
+          "id": "235",
+          "price": 4035.25,
+          "variants": [
+            "17335"
+          ],
+          "discount": 40,
+          "images": [
+            {
+              "url": "https://www.test.com.ar/1/image1.png"
+            }
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "458",
+          "price": 3750,
+          "variants": [
+            "17331"
+          ],
+          "discount": 40,
+          "images": [
+            {
+              "url": "https://www.test.com.ar/1/image1.png"
+            }
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "450",
+          "price": 4035.25,
+          "variants": [
+            "17336"
+          ],
+          "discount": 40,
+          "images": [
+            {
+              "url": "https://www.test.com.ar/1/image1.png"
+            }
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "115",
+          "price": 3750,
+          "variants": [
+            "17332"
+          ],
+          "discount": 40,
+          "images": [
+            {
+              "url": "https://www.test.com.ar/1/image1.png"
+            }
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "114",
+          "price": 4035.25,
+          "variants": [
+            "17333"
+          ],
+          "discount": 40,
+          "images": [
+            {
+              "url": "https://www.test.com.ar/1/image1.png"
+            }
+          ],
+          "isVisible": true
+        },
+        {
+          "id": "848",
+          "price": 3750,
+          "variants": [
+            "17334"
+          ],
+          "discount": 40,
+          "images": [
+            {
+              "url": "https://www.test.com.ar/1/image1.png"
+            }
+          ],
+          "isVisible": true
+        }
+      ],
+      "variants": [
+        {
+          "id": "17331",
+          "type": "Color",
+          "value": "BERRY"
+        },
+        {
+          "id": "17334",
+          "type": "Color",
+          "value": "BORGONA"
+        },
+        {
+          "id": "17332",
+          "type": "Color",
+          "value": "DEEP ROSE"
+        },
+        {
+          "id": "17335",
+          "type": "Color",
+          "value": "NUDE"
+        },
+        {
+          "id": "17336",
+          "type": "Color",
+          "value": "RED"
+        },
+        {
+          "id": "17333",
+          "type": "Color",
+          "value": "VIOLETA"
+        }
+      ]
+    }
+  ]
+}
+ ```
  # Webhook Output
  Now you can call a webhook as an output
  ```js
