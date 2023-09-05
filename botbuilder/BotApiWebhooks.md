@@ -235,6 +235,21 @@
 		"onlineAssistants": 1
 	}
  ```
+ ---
+ ### getOrderInvoice
+ #### Parameters
+ | Parameter        | Type   | Description                            |
+ | ---------------  | ------ | ---------------------------------------|
+ | functionName     | String | "getOrderInvoice"                     |
+ | botUuid          | String | botUuid that is saved in the context   |
+ | orderId          | String | orderId of the order                   |
+
+ #### Result Example
+ ```json
+	{
+		"invoiceUrl": "www.google.com"
+	}
+ ```
  # Webhook Output
  Now you can call a webhook as an output
  ```js
