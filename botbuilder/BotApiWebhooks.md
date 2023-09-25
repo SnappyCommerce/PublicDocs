@@ -145,11 +145,13 @@
  | country          | String | false    | country of the new contact                    |
  | isSubscriber     | Boolean| false    | wheter the new contact is subscribed or not   |
  | customContactId  | String | false    | External custom id                            |
+ | metadata	    | Array  | false    | Array of metadata values                      |
  | conversationUuid | String | false    | conversationUuid that is saved in the context |
  | asyncIntegration | Boolean| If true will  run asynchronous the integration |
 
 **Note:** webhook call should have at least a mail, phone, facebookId or instagramId
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
+**Note:** Metadata is an array of metadata values like: {key: 'vtex_id', type: 'string', value: '2kl312-312-dfdfs-e12123'}
 
 #### Result Example
 ```json
@@ -187,9 +189,11 @@
  | lastName         | String | false    | new lastName of the contact                   |
  | country          | String | false    | new country of the contact                    |
  | isSubscriber     | Boolean| false    | wheter the new contact is subscribed or not   |
+ | metadata	    | Array  | false    | Array of metadata values                      |
  | conversationUuid | String | false    | conversationUuid that is saved in the context |
 
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
+**Note:** Metadata is an array of metadata values like: {key: 'vtex_id', type: 'string', value: '2kl312-312-dfdfs-e12123'}
 
 ```json
 {
