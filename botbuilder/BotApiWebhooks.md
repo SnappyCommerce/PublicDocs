@@ -396,6 +396,29 @@
   ]
 }
  ```
+---
+
+### getOrder
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "gerOrder"                                    |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | orderId          | String |   true   | orderId of the order                          |
+ | validation       | String |   false  | validation for that oreder                    |
+
+ #### Result Example
+ ```json
+{
+	"order": {
+		"statusCode":"done",
+		"estimatedDate":"2023-09-28T13:57:50-03:00",
+		"trackingNumber":"xxxxxxxxxx",
+		"orderUrl": "https://www.google.com"
+	}
+}
+ ```
+ ---
  # Webhook Output
  Now you can call a webhook as an output
  ```js
