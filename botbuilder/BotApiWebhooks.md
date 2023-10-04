@@ -405,7 +405,7 @@
  | functionName     | String |   true   | "gerOrder"                                    |
  | botUuid          | String |   true   | botUuid that is saved in the context          |
  | orderId          | String |   true   | orderId of the order                          |
- | validation       | String |   false  | validation for that oreder                    |
+ | validation       | String |   false  | validation for that order                     |
 
  #### Result Example
  ```json
@@ -418,6 +418,38 @@
 	}
 }
  ```
+ ---
+### fetchKnowledges
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "fetchKnowledges"                             |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | query            | String |   true   | words you wanna search by                     |
+ | amount           | String |   false  | amount of knowledges on the response          |
+ | minDistance      | String |   false  | Min distance for the responses                |
+
+ #### Result Example
+ ```json
+{
+  "knowledges": [
+    {
+      "knowledge": "este es el texto 2",
+      "distance": "0.0643550157547"
+    },
+    {
+      "knowledge": "este es el texto 1",
+      "distance": "0.0981845259666"
+    },
+    {
+      "knowledge": "nuevo texto lucass",
+      "distance": "0.146913230419"
+    }
+  ]
+}
+ ```
+
+
  ---
  # Webhook Output
  Now you can call a webhook as an output
