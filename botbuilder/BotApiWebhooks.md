@@ -427,7 +427,7 @@
  | botUuid          | String |   true   | botUuid that is saved in the context          |
  | query            | String |   true   | words you wanna search by                     |
  | amount           | String |   false  | amount of knowledges on the response          |
- | minDistance      | String |   false  | Min distance for the responses                |
+ | maxDistance      | String |   false  | Max distance for the responses                |
 
  #### Result Example
  ```json
