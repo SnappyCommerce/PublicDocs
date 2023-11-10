@@ -418,6 +418,105 @@
 	}
 }
  ```
+---
+
+### getCart
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "getCart"                                     |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | conversationUuid | String |   false  | optional to return by conversation            |
+ | cartId           | String |   false  | optional to return by cart id                 |
+
+ #### Result Example
+ ```json
+{
+	//TODO
+}
+ ```
+---
+
+### addCartProducts
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "addProductToCart"                            |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | conversationUuid | String |   false  | optional to add to cart by conversation       |
+ | cartId           | String |   false  | optional to add to cart by cart id            |
+ | products         | Array  |   true   | array of snappyCartProducts                   |
+
+ #### snappyCartProducts example
+ ```json
+{
+  "productId": "123",
+  "variantId": "abc",
+  "quantity": "1"
+}
+ ```
+ #### Result Example
+ ```json
+{
+	//TODO
+}
+ ```
+---
+
+### removeCartProduct
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "addProductToCart"                            |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | conversationUuid | String |   false  | optional to remove from cart by conversation  |
+ | cartId           | String |   false  | optional to remove from cart by cart id       |
+ | cartProductId    | String |   true   | id of the cart product to remove              |
+
+ #### Result Example
+ ```json
+{
+	//TODO
+}
+ ```
+---
+### createCheckout
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "createOrder"                                 |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | conversationUuid | String |   false  | optional to create checkout by conversation   |
+ | cartId           | String |   false  | optional to create checkout by cart id        |
+ | shippingData     | object |   true   | snappyShippingData                            |
+
+
+ #### snappyShippingData example
+ ```json
+{
+  "fristName": "JuanoCruz",
+  "lastName": "Silva",
+  "address": "Av.Corrientes",
+  "number": "1234",
+  "floor": "1",
+  "locality": "CABA",
+  "city": "CABA",
+  "province": "CABA",
+  "country": "AR",
+  "zipcode": "1234",
+  "phone": "1234567890",
+  "pickupType": "pickup",
+  "shipping": "No informado",
+  "shippingOption": "No informado",
+  "shippingCostCustomer": "0"
+}
+ ```
+ #### Result Example
+ ```json
+{
+	//TODO
+}
+ ```
  ---
 ### fetchKnowledges
  #### Parameters
