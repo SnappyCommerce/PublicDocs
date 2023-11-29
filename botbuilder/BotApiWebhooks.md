@@ -432,7 +432,88 @@
  #### Result Example
  ```json
 {
-	//TODO
+	"cart": {
+		"uuid": "e5fdca37-b40d-4445-986f-0d136c552579",
+		"conversationUuid": "9d3598a5-62b0-465c-8855-90f76ef7b071",
+		"products": [
+			{
+				"id": "19357",
+				"title": "Set de Librería Mini Girls Mochila Negro",
+				"description": "El Set de Librería Mini Girls Mochila Negro es la elección perfecta para las\nniñas que buscan estilo y organización en la escuela. Esta mochila de color\nnegro, con su diseño elegante y versátil, incluye una variedad de útiles\nescolares esenciales, desde cuadernos hasta lápices de colores, todo en un\npaquete sofisticado. La mochila ofrece comodidad y facilidad de transporte para\nllevar todos los suministros a clase, y su tono negro es perfecto para combinar\ncon cualquier atuendo. Con el Set de Librería Mini Girls Mochila Negro, tus\npequeñas estarán listas para afrontar el día escolar con estilo y funcionalidad.\nEste conjunto equilibra la moda con la practicidad, asegurando que tus niñas\nestén preparadas para sus actividades escolares mientras lucen geniales.",
+				"link": "https://www.stylestore.com.ar/set-de-libreria-setminigirlsb/p",
+				"quantity": 1,
+				"cartProductId": "6",
+				"products": [
+					{
+						"id": "21558",
+						"price": 21895,
+						"variants": [],
+						"discount": 0,
+						"images": [
+							{
+								"url": "https://stylewatch.vteximg.com.br/arquivos/ids/239127/Set_Liberia_Girls_Negra_01.jpg?v=638295261040700000"
+							}
+						],
+						"isVisible": true,
+						"isSelected": true
+					}
+				],
+				"variants": []
+			}
+		],
+		"createdAt": "2023-11-29T13:57:14.913Z",
+		"updatedAt": null
+	}
+}
+ ```
+---
+
+---
+
+### createCart
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "createCart"                                  |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | conversationUuid | String |   false  | optional to return by conversation            |
+ | products         | Array  |   true   | array of snappyCartProducts                   |
+
+ #### Result Example
+ ```json
+{
+	"cart": {
+		"uuid": "e5fdca37-b40d-4445-986f-0d136c552579",
+		"conversationUuid": "9d3598a5-62b0-465c-8855-90f76ef7b071",
+		"products": [
+			{
+				"id": "19357",
+				"title": "Set de Librería Mini Girls Mochila Negro",
+				"description": "El Set de Librería Mini Girls Mochila Negro es la elección perfecta para las\nniñas que buscan estilo y organización en la escuela. Esta mochila de color\nnegro, con su diseño elegante y versátil, incluye una variedad de útiles\nescolares esenciales, desde cuadernos hasta lápices de colores, todo en un\npaquete sofisticado. La mochila ofrece comodidad y facilidad de transporte para\nllevar todos los suministros a clase, y su tono negro es perfecto para combinar\ncon cualquier atuendo. Con el Set de Librería Mini Girls Mochila Negro, tus\npequeñas estarán listas para afrontar el día escolar con estilo y funcionalidad.\nEste conjunto equilibra la moda con la practicidad, asegurando que tus niñas\nestén preparadas para sus actividades escolares mientras lucen geniales.",
+				"link": "https://www.stylestore.com.ar/set-de-libreria-setminigirlsb/p",
+				"quantity": 1,
+				"cartProductId": "6",
+				"products": [
+					{
+						"id": "21558",
+						"price": 21895,
+						"variants": [],
+						"discount": 0,
+						"images": [
+							{
+								"url": "https://stylewatch.vteximg.com.br/arquivos/ids/239127/Set_Liberia_Girls_Negra_01.jpg?v=638295261040700000"
+							}
+						],
+						"isVisible": true,
+						"isSelected": true
+					}
+				],
+				"variants": []
+			}
+		],
+		"createdAt": "2023-11-29T13:57:14.913Z",
+		"updatedAt": null
+	}
 }
  ```
 ---
@@ -458,7 +539,38 @@
  #### Result Example
  ```json
 {
-	//TODO
+	"cart": {
+		"uuid": "e5fdca37-b40d-4445-986f-0d136c552579",
+		"conversationUuid": "9d3598a5-62b0-465c-8855-90f76ef7b071",
+		"products": [
+			{
+				"id": "19357",
+				"title": "Set de Librería Mini Girls Mochila Negro",
+				"description": "El Set de Librería Mini Girls Mochila Negro es la elección perfecta para las\nniñas que buscan estilo y organización en la escuela. Esta mochila de color\nnegro, con su diseño elegante y versátil, incluye una variedad de útiles\nescolares esenciales, desde cuadernos hasta lápices de colores, todo en un\npaquete sofisticado. La mochila ofrece comodidad y facilidad de transporte para\nllevar todos los suministros a clase, y su tono negro es perfecto para combinar\ncon cualquier atuendo. Con el Set de Librería Mini Girls Mochila Negro, tus\npequeñas estarán listas para afrontar el día escolar con estilo y funcionalidad.\nEste conjunto equilibra la moda con la practicidad, asegurando que tus niñas\nestén preparadas para sus actividades escolares mientras lucen geniales.",
+				"link": "https://www.stylestore.com.ar/set-de-libreria-setminigirlsb/p",
+				"quantity": 1,
+				"cartProductId": "6",
+				"products": [
+					{
+						"id": "21558",
+						"price": 21895,
+						"variants": [],
+						"discount": 0,
+						"images": [
+							{
+								"url": "https://stylewatch.vteximg.com.br/arquivos/ids/239127/Set_Liberia_Girls_Negra_01.jpg?v=638295261040700000"
+							}
+						],
+						"isVisible": true,
+						"isSelected": true
+					}
+				],
+				"variants": []
+			}
+		],
+		"createdAt": "2023-11-29T13:57:14.913Z",
+		"updatedAt": null
+	}
 }
  ```
 ---
@@ -476,7 +588,38 @@
  #### Result Example
  ```json
 {
-	//TODO
+	"cart": {
+		"uuid": "e5fdca37-b40d-4445-986f-0d136c552579",
+		"conversationUuid": "9d3598a5-62b0-465c-8855-90f76ef7b071",
+		"products": [
+			{
+				"id": "19357",
+				"title": "Set de Librería Mini Girls Mochila Negro",
+				"description": "El Set de Librería Mini Girls Mochila Negro es la elección perfecta para las\nniñas que buscan estilo y organización en la escuela. Esta mochila de color\nnegro, con su diseño elegante y versátil, incluye una variedad de útiles\nescolares esenciales, desde cuadernos hasta lápices de colores, todo en un\npaquete sofisticado. La mochila ofrece comodidad y facilidad de transporte para\nllevar todos los suministros a clase, y su tono negro es perfecto para combinar\ncon cualquier atuendo. Con el Set de Librería Mini Girls Mochila Negro, tus\npequeñas estarán listas para afrontar el día escolar con estilo y funcionalidad.\nEste conjunto equilibra la moda con la practicidad, asegurando que tus niñas\nestén preparadas para sus actividades escolares mientras lucen geniales.",
+				"link": "https://www.stylestore.com.ar/set-de-libreria-setminigirlsb/p",
+				"quantity": 1,
+				"cartProductId": "6",
+				"products": [
+					{
+						"id": "21558",
+						"price": 21895,
+						"variants": [],
+						"discount": 0,
+						"images": [
+							{
+								"url": "https://stylewatch.vteximg.com.br/arquivos/ids/239127/Set_Liberia_Girls_Negra_01.jpg?v=638295261040700000"
+							}
+						],
+						"isVisible": true,
+						"isSelected": true
+					}
+				],
+				"variants": []
+			}
+		],
+		"createdAt": "2023-11-29T13:57:14.913Z",
+		"updatedAt": null
+	}
 }
  ```
 ---
@@ -514,7 +657,7 @@
  #### Result Example
  ```json
 {
-	//TODO
+	"checkoutData": "https://snappycommercestore.mitiendanube.com/checkout/v3/start/1391478941/7b8b44ef15b724cd85d2b01d9abdeccbcb56a436?from_store=1"
 }
  ```
  ---
@@ -565,3 +708,4 @@ For the property `value` you need to provide the payload of any of the functions
 This will always respond with an output called `#internal/output-response`. This response will add two properties to the context.
 - `outputResponse` will have the response. If there is an error will return null.
 - `outputResponseError` if there is an error will return the error data otherwise will return null.
+
