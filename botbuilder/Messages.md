@@ -174,9 +174,9 @@ The search message executes a product search when sent, the query to search is s
 	"snappy": [
 		{
 			"values": {
-				query: "Remera",
-				categoryId: "1",
-				subCategoryId: "2",
+				"query": "Remera",
+				"categoryId": "1",
+				"subCategoryId": "2",
 			},
 			"type": "productSearch",
 			"priority": 3
