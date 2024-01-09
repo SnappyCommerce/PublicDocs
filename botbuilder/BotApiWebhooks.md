@@ -274,6 +274,14 @@
       "title": "Test product",
       "description": "Test description",
       "link": "https://www.test.com.ar/1/p",
+	 "specifications": {
+	    "Número de Fit": [
+	      "511"
+	    ],
+	    "Tipo de Producto": [
+	      "Pantalones"
+	    ]
+	},
       "products": [
         {
           "id": "235",
