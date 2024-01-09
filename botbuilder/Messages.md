@@ -166,15 +166,19 @@ The horizontal value defines in what way should the options be displayed.
 }
 ```
 
-### Search Message
-The search mesage executes a product search when sent, the query to search is specified in the value.
+### Product Search Message
+The search message executes a product search when sent, the query to search is specified in the query.
 
 ```json
 "output": {
 	"snappy": [
 		{
-			"value": "Remera",
-			"type": "search",
+			"values": {
+				query: "Remera" //opcional
+				categoryId: "1" //opcional
+				subCategoryId: "2" //opcional
+			},
+			"type": "productSearch",
 			"priority": 3
 		}
 	]
@@ -228,6 +232,118 @@ Sends a custom carousel of images with names and links.
 					"link": "https://bing.com",
 					"image": "https://example.com/image.jpg"
 				}
+			],
+			"type": "carousel",
+			"priority": 5
+		}
+	]
+}
+```
+
+### Carousel Products Message
+Sends a custom carousel of predefined products.
+
+```json
+"output": {
+	"snappy": [
+		{
+			"products": [
+				{
+				    "id": "1062",
+				    "title": "Pantalón Hombre Levi's XX CHINO EZ Taper",
+				    "description": "Nuestro pantalón Chino EZ Taper cómodo y suave, está aquí¡ para brindarte un\najuste regular que te favorecerá.",
+				    "detailedDescription": "",
+				    "link": "https://www.levi.cl/pantalon-hombre-levi-s-xx-chino-ez-taper-a1041-0010/p",
+				    "products": [
+					      {
+						"id": "9395",
+						"price": 54990,
+						"variants": [
+						  "3762",
+						  "3758"
+						],
+						"discount": 40,
+						"images": [
+						  {
+						    "url": "https://leviscl.vteximg.com.br/arquivos/ids/1021914/A1041-0010_1.jpg?v=637949624130230000"
+						  }
+						],
+						"isVisible": true
+					      },
+					      {
+						"id": "9396",
+						"price": 54990,
+						"variants": [
+						  "3757",
+						  "3758"
+						],
+						"discount": 40,
+						"images": [
+						  {
+						    "url": "https://leviscl.vteximg.com.br/arquivos/ids/1021918/A1041-0010_1.jpg?v=637949624154400000"
+						  }
+						],
+						"isVisible": true
+					      },
+					      {
+						"id": "9397",
+						"price": 54990,
+						"variants": [
+						  "3766",
+						  "3758"
+						],
+						"discount": 40,
+						"images": [
+						  {
+						    "url": "https://leviscl.vteximg.com.br/arquivos/ids/1021922/A1041-0010_1.jpg?v=637949624176900000"
+						  }
+						],
+						"isVisible": true
+					      },
+					      {
+						"id": "9398",
+						"price": 54990,
+						"variants": [
+						  "3759",
+						  "3758"
+						],
+						"discount": 40,
+						"images": [
+						  {
+						    "url": "https://leviscl.vteximg.com.br/arquivos/ids/1021926/A1041-0010_1.jpg?v=637949624201000000"
+						  }
+						],
+						"isVisible": true
+					      }
+					    ],
+					    "variants": [
+					      {
+						"id": "3759",
+						"type": "Cintura",
+						"value": "30"
+					      },
+					      {
+						"id": "3762",
+						"type": "Cintura",
+						"value": "32"
+					      },
+					      {
+						"id": "3766",
+						"type": "Cintura",
+						"value": "34"
+					      },
+					      {
+						"id": "3757",
+						"type": "Cintura",
+						"value": "36"
+					      },
+					      {
+						"id": "3758",
+						"type": "Largo",
+						"value": "32"
+					      }
+					    ]
+				  }
 			],
 			"type": "carousel",
 			"priority": 5
