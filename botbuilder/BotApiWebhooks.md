@@ -698,7 +698,50 @@
   ]
 }
  ```
+ ---
 
+### fetchCategorySpecifications
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "fetchCategorySpecifications"                 |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | subCategoryId    | String |   true   | Search specifications of sub category         |
+
+ #### Result Example
+ ```json
+{
+  "specifications":
+     [
+	  {
+	    "id": "116",
+	    "name": "Cintura",
+	    "values": [
+	      "36",
+	      "30",
+	      "29"
+	    ]
+	  },
+	  {
+	    "id": "122",
+	    "name": "Largo",
+	    "values": [
+	      "32",
+	      "30",
+	      "34"
+	    ]
+	  },
+	  {
+	    "id": "103",
+	    "name": "Tipo de Producto",
+	    "values": [
+	      "Jeans",
+	      "Buzos"
+	    ]
+	  }
+    ]
+}
+ ```
 
  ---
  # Webhook Output
