@@ -9,7 +9,7 @@ Si empezaste a trabajar en Snappy, ¡bienvenido! 🎉🎉
 
 # Documentation Index
 - BotBuilder
-  - [Messages](/botbuilder/Messages.md) - Information about the different Watson message types
-  - [Context](/botbuilder/Context.md) - Information on how we implement Watson's context
+  - [Messages](/botbuilder/Messages.md) - Information about the different message types
+  - [Context](/botbuilder/Context.md) - Information on how we implement context
   - [Webhooks](/botbuilder/BotApiWebhooks.md) - Information on different webhooks for use in Bot builders
   - [Internal Messages](/botbuilder/InternalMessages.md) - Information on how the Internal Messages System works
