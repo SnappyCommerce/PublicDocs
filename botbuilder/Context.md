@@ -1,6 +1,13 @@
 # About
 This document shows and explains what data is sent to BotBuilders via the conversation context in order to know know to use it.
 
+## Custom Contexts
+Custom Contexts are contexts that can be applied by clients in the **behaviour** tab of the bot configuration in Labs. They can be used to alter the bot's behaviour in certain flows without necessarily using the bot builder to edit said flows, with the requirement that the flow has been built with the custom contexts in mind.
+| Value | Description |
+| ------------- | ------------- |
+| noTicketCreation | Disables the ticket creation and instead responds with a text when needed (translation path: botFunctions.createTicket.ticketCreationDisabled) |
+| skipSpecificationFilter:_filterName_ | Stops any specification filter from showing up among the filters offered to the user (eg.: skipSpecificationFilter:Color) |
+
 ## Main Context
 | Key Name | Description | Type |
 | ------------- | ------------- | ----- |
