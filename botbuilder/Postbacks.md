@@ -20,6 +20,7 @@ These are some postbacks made specifically for clients to use in their menu conf
 
 ### Other Postbacks
 These are some postbacks that we use in other flows internally
+ #### Catalog
  | Postback        | Description   |
  | ---------------  | ------ |
  | selectCategory:_categoryId_     | Selects a category from the product catalog. Requires the conversation to have loaded categoriesData |
