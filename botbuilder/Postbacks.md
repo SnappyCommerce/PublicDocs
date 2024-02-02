@@ -1,8 +1,8 @@
 # Postbacks
 
-Postbacks give information to the bot about options that are selected by the user.
+Postbacks give information to the bot about options that are selected by the user. For each option set in any menu in the bot builder, there are two properties: **label** and **value**. **label** represents what the user sees in each clickable option box. **value** represents what the bot recieves as input (what we call the postback) when the user chooses said option. Postbacks can be evaluated using the **input.postback** variable.
 
-### Client Menu Postbacks
+## Client Menu Postbacks
 These are some postbacks made specifically for clients to use in their menu configs to build their own conversational trees
  | Postback                   | Description                              |
  | -------------------------  | ---------------------------------------- |
@@ -18,9 +18,9 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:getBranches | Takes the user to the branches flow |
  | action:survey | Takes the user to the satisfaction survey |
 
-### Other Postbacks
+## Other Postbacks
 These are some postbacks that we use in other flows internally
- #### Catalog
+ ### Catalog
  | Postback        | Description   |
  | ---------------  | ------ |
  | selectCategory:_categoryId_     | Selects a category from the product catalog. Requires the conversation to have loaded categoriesData |
