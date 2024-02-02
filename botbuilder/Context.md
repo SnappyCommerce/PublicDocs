@@ -7,6 +7,11 @@ Custom Contexts are contexts that can be applied by clients in the **behaviour**
 | ------------- | ------------- |
 | noTicketCreation | Disables the ticket creation and instead responds with a text when needed (translation path: botFunctions.createTicket.ticketCreationDisabled) |
 | skipSpecificationFilter:_filterName_ | Stops any specification filter from showing up among the filters offered to the user (eg.: skipSpecificationFilter:Color) |
+| contacts.requiresEmail | Forces contacts to have an email before creating a ticket |
+| whatsappReplies | Limits all bot interactions in whatsapp to requesting human assistance |
+| instagramReplies | Limits all bot interactions in instagram to requesting human assistance |
+
+
 
 ## Main Context
 | Key Name | Description | Type |
