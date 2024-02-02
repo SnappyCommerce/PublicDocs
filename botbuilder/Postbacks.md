@@ -3,7 +3,7 @@
 Postbacks give information to the bot about options that are selected by the user.
 
 ### Client Menu Postbacks
-Here we'll document postbacks that clients can use in their menu configs to build their own conversational trees
+These are some postbacks made specifically for clients to use in their menu configs to build their own conversational trees
  | Postback                   | Description                              |
  | -------------------------  | ---------------------------------------- |
  | action:menu:_menuUuid_     | Takes the user to another menu           |
