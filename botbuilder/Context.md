@@ -52,6 +52,7 @@ The following data is inside: `context.snappylabs` or `$snappylabs`
 | [providers](#providers) | Bot's integration providers | Object |
 | checkoutLink | The store's checkout link | String |
 | isAssistanceOnline | true during the store's attention schedule. Updates with every message | Boolean |
+| [ivrData](#ivrData) | Bot's menus information | Object |
 
 
 ### Integrations
@@ -137,6 +138,17 @@ These are the possible items a store might have providers for:
 - updateCheckoutCart
 - categorySpecifications
 - subscribeToStockNotifications
+
+### ivrData
+Contains information about the store's configured menus. Each property of the object represents a menu, with its uuid as the key for the object. This is the information that each menu holds:
+
+| Key Name | Description | Type |
+| ------------- | ------------- | ----- |
+| uuid | The menu's uuid | String |
+| title | The menu's title (what will be shown as the header above the options) | String |
+| options | An array of all the options in the menu with their label, value and position. For more information about options and how they behave, see [Postbacks](Postbacks.md) | Array |
+| createdAt | A timestamp of when the menu was created | String |
+| isMainMenu | true if this is the main menu (main menus are shown at the start of conversations) | Boolean |
 
 ## storeInfo
 The following data is inside $storeInfo
