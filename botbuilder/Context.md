@@ -16,8 +16,15 @@ Custom Contexts are contexts that can be applied by clients in the **behaviour**
 ## Main Context
 | Key Name | Description | Type |
 | ------------- | ------------- | ----- |
-| botName | Bot's Name | String |
 | [snappylabs](#snappy-labs) | Snappylabs Information | Object |
+| botName | Bot's Name | String |
+| botUuid | Bot's Uuid | String |
+| conversationUuid | Conversation's Uuid | String |
+| storeUuid | Store's Uuid | String |
+| channel | Conversation's channel (Possible values: 'websocket', 'whatsapp', 'instagram', 'facebook') | String |
+| remoteUrl | The URL the user is writing from (if channel is websocket) | String |
+| [storeInfo](#storeInfo) | Store's info | Object |
+
 
 ## Snappy Labs
 The following data is inside: `context.snappylabs` or `$snappylabs`
@@ -69,10 +76,20 @@ The Main Menu sub-object tells Watson information about the bot's configured Mai
 | ------------- | ------------- | ----- |
 | hasMenu | Does this bot's have a configured main menu? | Boolean |
 | question | The main menu question, if any | String |
-| items | Possible main menu replies, if any | [String] |
+| items | Possible main menu replies, if any | String |
 
 ### Branches
 > **Important:** This sub-object is currently not in use.
 
 This object will tell Watson information about a store's branches, for example:
 **Last Branch Shown**, **Store's Branches** and **Nearest Branch**
+
+
+## storeInfo
+The following data is inside $storeInfo
+
+| Key Name | Description | Type |
+| ------------- | ------------- | ----- |
+| name | The store's name as it is set in labs | String |
+| url | The store's url as it is set in labs | String |
+| mail | The store's email address as it is set in labs | String |
