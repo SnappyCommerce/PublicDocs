@@ -6,7 +6,7 @@ Custom Contexts are contexts that can be applied by clients in the **behaviour**
 | Value | Description |
 | ------------- | ------------- |
 | noTicketCreation | Disables the ticket creation and instead responds with a text when needed (translation path: botFunctions.createTicket.ticketCreationDisabled) |
-| skipSpecificationFilter:_filterName_ | Stops any specification filter from showing up among the filters offered to the user (eg.: skipSpecificationFilter:Color) |
+| skipSpecificationFilter:_filterName_ | Stops any specification filter from showing up among the filters offered to the user (e.g.: skipSpecificationFilter:Color) |
 | contacts.requiresEmail | Forces contacts to have an email before creating a ticket |
 | whatsappReplies | Limits all bot interactions in whatsapp to requesting human assistance |
 | instagramReplies | Limits all bot interactions in instagram to requesting human assistance |
@@ -113,7 +113,7 @@ Similarly to product search, after an order status query is conducted using the 
 
 | Key Name | Description | Type |
 | ------------- | ------------- | ----- |
-| statusCode | The code of the order's status (eg.: `delivered`) | String |
+| statusCode | The code of the order's status (e.g.: `delivered`) | String |
 | estimatedDate | The estimated date for the order's delivery in [yyyy-MM-dd Unicode Technical Standard #35 format](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) | String |
 | hasTrackingNumber | true if a tracking number is available for the order | Boolean |
 | trackingNumber | The order's tracking number | String |
@@ -122,7 +122,7 @@ Similarly to product search, after an order status query is conducted using the 
 | date | A timestamp of when the order was placed | String |
 
 ### Providers
-Contains information about the providers for the bot's different functions. Each item is an array containing all of the active providers for said item. eg.: If the store has two order status providers, Andreani and VTEX, then $snappylabs.providers.orderStatus will be `["Andreani","VTEX"]`. If it has none, then it will be `[]`
+Contains information about the providers for the bot's different functions. Each item is an array containing all of the active providers for said item. e.g.: If the store has two order status providers, Andreani and VTEX, then $snappylabs.providers.orderStatus will be `["Andreani","VTEX"]`. If it has none, then it will be `[]`
 
 These are the possible items a store might have providers for:
 - getContact
@@ -165,8 +165,8 @@ The following data is inside $lastMessage
 | Key Name | Description | Type |
 | ------------- | ------------- | ----- |
 | isFile | true if the last message sent was a file, false if not | Boolean |
-| fileType | The type of file sent by the user (eg.: `image/jpeg`, `video/mp4`) | String |
-| meta | Tells us if the last message was a social media interaction of some sort and of what type (eg.: `instagram_post_share`, `instagram_story_mention`, `instagram_story_reply`, `shared_meta_product`) | String |
+| fileType | The type of file sent by the user (e.g.: `image/jpeg`, `video/mp4`) | String |
+| meta | Tells us if the last message was a social media interaction of some sort and of what type (e.g.: `instagram_post_share`, `instagram_story_mention`, `instagram_story_reply`, `shared_meta_product`) | String |
 | isProduct | true if the last message sent was a product (from Facebook, for example) | Boolean |
 | product | Information from the product sent | Object |
 
@@ -178,7 +178,7 @@ The following data is inside $notificationMetadata These contexts will only be p
 | ------------- | ------------- | ----- |
 | uuid | The notification's uuid | String |
 | userId | Uuid of the contact the notification was sent to | String |
-| actions | Lists the actions taken along with the notification. Each action is an object, containing the `action` value which determines if the action was `assignToSector` or `assignToUser`, and `sector` which determines the sector the conversation was assigned to, or `userUuid` which determines the Uuid of the labs user the conversation was assigned to. eg.: `[{"action":"assignToSector","sector":"sales"},{"action":"assignToUser","userUuid":"exampleUuid"}]` | Array |
+| actions | Lists the actions taken along with the notification. Each action is an object, containing the `action` value which determines if the action was `assignToSector` or `assignToUser`, and `sector` which determines the sector the conversation was assigned to, or `userUuid` which determines the Uuid of the labs user the conversation was assigned to. e.g.: `[{"action":"assignToSector","sector":"sales"},{"action":"assignToUser","userUuid":"exampleUuid"}]` | Array |
 | contexts | Similar to custom contexts, holds all contexts set for a notification by the clients in labs as booleans | Object |
 | timestamp | The timestamp of when the notification was received | String |
 
@@ -192,7 +192,7 @@ The following data is inside $snappyData This is contact information received fr
 | loginFirstName | The user's first name | String |
 | loginLastName | The user's last name | String |
 | loginPhone | The user's phone number | String |
-| loginDocumentType | The user's document type (eg.: `DNI`) | String |
+| loginDocumentType | The user's document type (e.g.: `DNI`) | String |
 | loginDni | The user's document number | String |
 | email | The user's email address | String |
 | orderNumber | The user's last order number | String |
