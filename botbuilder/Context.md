@@ -114,7 +114,7 @@ Similarly to product search, after an order status query is conducted using the 
 | Key Name | Description | Type |
 | ------------- | ------------- | ----- |
 | statusCode | The code of the order's status (eg.: `delivered`) | String |
-| estimatedDate | The estimated date for the order's delivery in yyyy-MM-dd format | String |
+| estimatedDate | The estimated date for the order's delivery in [yyyy-MM-dd Unicode Technical Standard #35 format](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table) | String |
 | hasTrackingNumber | true if a tracking number is available for the order | Boolean |
 | trackingNumber | The order's tracking number | String |
 | orderUrl | The order's tracking URL | String |
