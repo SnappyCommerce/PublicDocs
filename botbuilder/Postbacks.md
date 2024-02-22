@@ -17,6 +17,7 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:productSearch | Takes the user to the product catalog |
  | action:getBranches | Takes the user to the branches flow |
  | action:survey | Takes the user to the satisfaction survey |
+ | action:offerAdditionalAssistance | Offers the user additional assistance options |
 
 ## Other Postbacks
 These are some postbacks that we use in other flows internally
