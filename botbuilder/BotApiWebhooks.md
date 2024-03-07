@@ -410,24 +410,62 @@
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "gerOrder"                                    |
+ | functionName     | String |   true   | "getOrder"                                    |
  | botUuid          | String |   true   | botUuid that is saved in the context          |
  | orderId          | String |   true   | orderId of the order                          |
- | validation       | String |   false  | validation for that order                     |
+ | query       | String |   false  | the query that is needed to get the order (it can be an user id or some other thing depending on each integration)                     |
 
  #### Result Example
  ```json
 {
-	"order": {
-		"statusCode":"done",
-		"estimatedDate":"2023-09-28T13:57:50-03:00",
-		"trackingNumber":"xxxxxxxxxx",
-		"orderUrl": "https://www.google.com"
-	}
+	"order": [
+		{
+			"integration": "coolIntegration",
+			"value": null
+		},
+		{
+			"integration": "coolerIntegration",
+			"value": {
+				"statusCode": "picked-up",
+				"statusFull": "Retirado",
+				"estimatedDate": "2024-03-05T09:47:56-03:00"
+			}
+		}
+	]
 }
  ```
 ---
 
+### getOrdersById
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "gerOrdersById"                               |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | query       | String |   false  | the query that is needed to get the order (it can be an user id or some other thing depending on each integration)                     |
+
+ #### Result Example
+ ```json
+{
+	"orderNumbers": [
+		{
+			"integration": "coolIntegration",
+			"value": {}
+		},
+		{
+			"integration": "coolerIntegration",
+			"value": {
+				"number1": "SLT-prs123-01",
+				"number2": "pcs456-01",
+				"number3": "pcs789-01",
+				"number4": "pcs1011-01",
+				"number5": "pcs1213-01",
+			}
+		}
+	]
+}
+ ```
+---
 ### getCart
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
