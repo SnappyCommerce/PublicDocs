@@ -131,6 +131,7 @@ These are the possible items a store might have providers for:
 - chatTransfer
 - syncContacts
 - productSearch
+- getOrdersById
 - getCheckoutCart
 - getOrderInvoice
 - generateCheckout
