@@ -18,6 +18,7 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:getBranches | Takes the user to the branches flow |
  | action:survey | Takes the user to the satisfaction survey |
  | action:offerAdditionalAssistance | Offers the user additional assistance options |
+ | action:setSector:_sector_ | Assigns the conversation to a sector |
 
 ## Other Postbacks
 These are some postbacks that we use in other flows internally
