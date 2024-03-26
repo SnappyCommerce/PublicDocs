@@ -27,6 +27,8 @@ To set up your notification template to use actions in their buttons, a '**hasBu
 
 For exampe, a notification template that uses two buttons should look something like this:
 
+![notification button contexts](/images/botbuilder/postbacks/notification-buttons-contexts.jpg)
+
 _Disclaimer: in order to avoid any user inputs from potentially being flagged as button interactions incorrectly, these buttons will only be valid in the first interaction after the user receives their notification message. If the user types any other message or interacts with the bot in any other way, the buttons will no longer be valid as such._
 
 ## Other Postbacks
