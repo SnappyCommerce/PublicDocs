@@ -20,6 +20,15 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:offerAdditionalAssistance | Offers the user additional assistance options |
  | action:setSector:_sector_ | Assigns the conversation to a sector |
 
+### Enabling Menu Postbacks in Notification Messages
+Notification messages sent proactively to customers support buttons, but due to gupshup limitations they do not support postback values. In order to work around this issue, there is a Notification Buttons package that uses notification contexts in order to process actions related to these buttons.
+
+To set up your notification template to use actions in their buttons, a '**hasButtons**' context is required to indicate that your notification template has buttons with actions linked to them. You also need one context per each button, set in the following format: '**button:_button-label_:_actions_** in such way that 'button-label' corresponds to the text that goes in the button (must match exactly) and 'actions' corresponds to the desired action that should take place when the user interacts with the button (all [Client Menu Postbacks](#client-menu-postbacks) are supported. Multiple actions can be used by separating each action with ';')
+
+For exampe, a notification template that uses two buttons should look something like this:
+
+_Disclaimer: in order to avoid any user inputs from potentially being flagged as button interactions incorrectly, these buttons will only be valid in the first interaction after the user receives their notification message. If the user types any other message or interacts with the bot in any other way, the buttons will no longer be valid as such._
+
 ## Other Postbacks
 These are some postbacks that we use in other flows internally
  ### Catalog
