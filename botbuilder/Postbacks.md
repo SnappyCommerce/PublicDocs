@@ -25,7 +25,7 @@ Notification messages sent proactively to customers can support buttons, but due
 
 To set up your notification template to use actions in their buttons, a '**hasButtons**' context is required to indicate that your notification template has buttons with actions linked to them. You also need one context per each button, set in the following format: '**button:_button-label_:_actions_** in such way that 'button-label' corresponds to the text that goes in the button (must match exactly) and 'actions' corresponds to the desired action that should take place when the user interacts with the button (all [Client Menu Postbacks](#client-menu-postbacks) are supported. Multiple actions can be used by separating each action with ';')
 
-For exampe, a notification template that uses two buttons should look something like this:
+For example, a notification template that uses two buttons should look like this (_note: the 'broadcast' context is unrelated to this example_):
 
 ![notification button contexts](/images/botbuilder/postbacks/notification-buttons-contexts.jpg)
 
