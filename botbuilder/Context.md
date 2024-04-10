@@ -13,6 +13,8 @@ Custom Contexts are contexts that can be applied by clients in the **behaviour**
 | disableInstagramBot | Limits all bot interactions in instagram to requesting human assistance |
 | disableFacebookBot | Limits all bot interactions in facebook to requesting human assistance |
 | forceTermsAndConditions | Requests user to accept terms and conditions before continuing conversation |
+| humanAssistance.requiresContact | Forces users to create a contact before requesting human assistance
+| humanAssistance.requiresTicket | Forces users to create a ticket before requesting human assistance
 
 ## Main Context
 These are all the contexts that the bot receives from labs at the start of or during a conversation. These can all be evaluated and used by the bot together with any contexts set by the bot itself in the bot builder.
