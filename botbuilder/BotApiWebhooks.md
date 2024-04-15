@@ -621,7 +621,7 @@
  ```
 ---
 
-### removeCartProduct
+### removeProductCart
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
