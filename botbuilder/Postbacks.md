@@ -19,7 +19,6 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:survey | Takes the user to the satisfaction survey |
  | action:offerAdditionalAssistance | Offers the user additional assistance options |
  | action:setSector:_sector_ | Assigns the conversation to a sector |
- | action:removeProduct | Removes user´s selected product from existing cart |
 
 ### Enabling Menu Postbacks in Notification Messages
 Notification messages sent proactively to customers can support buttons, but due to gupshup limitations they do not support postback values. In order to work around this issue, there is a Notification Buttons package that uses notification contexts in order to process actions related to these buttons.
@@ -47,4 +46,4 @@ These are some postbacks that we use in other flows internally
  | searchOtherProducts | Restarts the catalog flow |
  | goBackToMainMenu | Returns to the main menu |
  | nothingElseThanks | Takes the user to the satisfaction survey |
- 
+ | removeProduct:product.id | Removes user´s selected product by it´s id |
