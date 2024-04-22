@@ -46,4 +46,9 @@ These are some postbacks that we use in other flows internally
  | searchOtherProducts | Restarts the catalog flow |
  | goBackToMainMenu | Returns to the main menu |
  | nothingElseThanks | Takes the user to the satisfaction survey |
- | removeProduct:_cartProductId_ | Removes a product from a cart by its cartProductId (requires a cart) |
+ | removeProduct:_cartProductId_ | Removes a product from a cart by it´s cartProductId (requires a cart) |
+ | startRemoveProduct | Delivers user to Remove Product flow | 
+ | modifyProduct:_cartProductId_ | Modifies quantity or variants of a selected product by it´s  cartProductId
+ | startModifyProduct | Delivers user to Modify Product flow |
+ | endPurchase |  Delivers user to End Purchase flow |
+ | addProduct | Delivers user to Product Search flow |
