@@ -782,6 +782,102 @@
  ```
 
  ---
+
+ ## fetchCategories
+
+#### Parameters
+
+| Parameter    | Type   | required | Description                                         |
+| ------------ | ------ | -------- | --------------------------------------------------- |
+| functionName | String | true     | "fetchCategories"                                   |
+| botUuid      | String | true     | botUuid that is saved in the context                |
+| query        | String | false    | Checks for categories that include the given string |
+
+#### Result Example
+
+```json
+{
+  "categories": [
+	{
+	  "id": "11",
+	  "uuid": "c04bf496-661b-429b-98c9-a291442fba80",
+	  "name": "toys",
+	  "description": "Toys for people who enjoy playing with toys",
+	  "value": "toys",
+	  "label": "toys",
+	  "canBeShared": true,
+	  "url": "magictoys.com",
+	  "subCategories": [
+		{
+		  "id": "9",
+		  "uuid": "bb37e39d-ff33-4232-b5c4-b0bc6bebb734",
+		  "categoryId": "11",
+		  "name": "boys",
+		  "createdAt": "2024-04-26T15:31:16.054Z",
+		  "updatedAt": null,
+		  "tsvName": "'boys':1A",
+		  "productsCount": 0,
+		  "value": "boys",
+		  "label": "boys"
+		},
+		{
+		  "id": "10",
+		  "uuid": "0aff210a-9ab5-46af-b214-712be9b861ac",
+		  "categoryId": "11",
+		  "name": "girls",
+		  "createdAt": "2024-04-26T15:31:22.480Z",
+		  "updatedAt": null,
+		  "tsvName": "'girls':1A",
+		  "productsCount": 0,
+		  "value": "girls",
+		  "label": "girls"
+		},
+		{
+		  "id": "12",
+		  "uuid": "59f58dfc-55bb-4fc3-9197-db24d3c845df",
+		  "categoryId": "11",
+		  "name": "genderless",
+		  "createdAt": "2024-04-26T15:31:35.170Z",
+		  "updatedAt": null,
+		  "tsvName": "'genderless':1A",
+		  "productsCount": 0,
+		  "value": "genderless",
+		  "label": "genderless"
+		},
+		{
+		  "id": "13",
+		  "uuid": "538e7a85-55d4-4085-8da2-e792457cc47a",
+		  "categoryId": "11",
+		  "name": "adults",
+		  "createdAt": "2024-04-26T15:31:44.781Z",
+		  "updatedAt": null,
+		  "tsvName": "'adults':1A",
+		  "productsCount": 0,
+		  "value": "adults",
+		  "label": "adults"
+		}
+	  ],
+	  "subCategoriesNames": ["boys", "girls", "genderless", "adults"]
+	},
+	{
+	  "id": "12",
+	  "uuid": "884c9c18-e8ce-4a1f-a394-1d730199af1f",
+	  "name": "food",
+	  "description": "",
+	  "value": "food",
+	  "label": "food",
+	  "canBeShared": true,
+	  "url": null,
+	  "subCategories": [],
+	  "subCategoriesNames": []
+	}
+  ],
+  "categoriesNames": ["toys", "food"]
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
