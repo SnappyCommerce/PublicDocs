@@ -3,7 +3,7 @@ When the user asks the bot a question, the bot will use the user's input to sear
 
 To alleviate this, the bot will identify the user's intent and make an additional search for knowledge using a generic question based around common Frequently Asked Questions, such as 'What are your payment methods?', which will help find a better suited piece of knowledge to form a response that is useful to the user.
 >[!IMPORTANT]
->It is recommended that clients include these queries as FAQs in their bot configuration
+>It is recommended that clients include these queries as FAQs in their bot configuration.
 ---
 These are the queries used for each intent:
 | Language |
