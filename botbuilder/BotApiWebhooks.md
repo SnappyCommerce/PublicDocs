@@ -738,6 +738,64 @@
  ```
  ---
 
+### fetchFaq
+#### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "fetchFaq"                                    |
+ | uuid             | String |   true   | The FAQ uuid                                  |
+
+#### Result Example
+```json
+{
+	"faq": {
+		"uuid": "00df5ecf-0cac-46a1-80c7-cbfc2dcd50b3",
+		"question": "¿A qué horario abren sus locales?",
+		"answer": "Abrimos de lunes a viernes de 9 a 21hs!",
+		"tags": [],
+		"createdAt": "2024-04-22T21:17:15.586Z",
+		"updatedAt": "2024-04-22T21:17:15.586Z"
+	}
+}
+```
+
+### fetchPromotions
+#### Parameters
+ | Parameter        | Type     | required | Description                                   |
+ | ---------------- | -------- | ---------| --------------------------------------------- |
+ | functionName     | String   |   true   | "fetchPromotions"                                    |
+ | onlyActive       | Boolean  |   false  | Only fetch promotions that are currenlty active. Default is `true` |
+ | validToday       | Boolean  | false    | Only fetch promotions that applies for today. Default is `false` |
+ | days             | String[] | false    | Filter promotions by the provided days |
+
+ >[!NOTE]
+ >Valid days are `'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'`
+
+ ```json
+{
+	"promotions": [
+		{
+			"uuid": "f802cfb8-0ddf-4b10-bb0f-b949acc3e3eb",
+			"title": "Santander 20%",
+			"description": "Todos los días tenes descuento con santander",
+			"url": "https://www.santander.com.ar",
+			"image": "https://www.santander.com.ar/banco/wcm/connect/9528486c-d93c-4b66-89b8-64e45d569e00/SLIDER_MODO_CINEPOLIS_Mobile.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-9528486c-d93c-4b66-89b8-64e45d569e00-ouAWtgu",
+			"sinceDate": "2024-04-20T03:00:00.000Z",
+			"untilDate": "2024-04-25T03:00:00.000Z",
+			"days": [
+				"monday",
+				"tuesday",
+				"wednesday",
+				"thursday",
+				"friday"
+			],
+			"createdAt": "2024-04-24T19:32:03.199Z",
+			"updatedAt": "2024-04-25T14:13:46.401Z"
+		}
+	]
+}
+ ```
+
 ### fetchCategorySpecifications
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
