@@ -19,6 +19,7 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:survey | Takes the user to the satisfaction survey |
  | action:offerAdditionalAssistance | Offers the user additional assistance options |
  | action:setSector:_sector_ | Assigns the conversation to a sector |
+ | action:setTopic:_topic_ | Appends a topic to the conversation topics and sets it as the conversation's current topic |
 
 ### Enabling Menu Postbacks in Notification Messages
 Notification messages sent proactively to customers can support buttons, but due to gupshup limitations they do not support postback values. In order to work around this issue, there is a Notification Buttons package that uses notification contexts in order to process actions related to these buttons.
