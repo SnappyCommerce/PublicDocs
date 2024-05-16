@@ -564,7 +564,7 @@
  ```
 ---
 
-### addCartProducts
+### addProductToCart
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
