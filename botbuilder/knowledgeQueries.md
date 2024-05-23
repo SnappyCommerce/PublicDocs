@@ -82,3 +82,4 @@ These are the queries used for each intent:
 | modifyOrderPaymentMethod | ¿Puedo cambiar el medio de pago de mi compra? |
 | addProductToExistingOrder | ¿Puedo agregar un producto a mi orden? |
 | orderDeliverySelectionProblem | No puedo elegir la forma de envío que quiero |
+| taxInformation | ¿Los Impuestos están incluidos en el precio? |
