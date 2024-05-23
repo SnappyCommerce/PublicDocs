@@ -39,6 +39,7 @@ These are the queries used for each intent:
 | bankPromotions, getPaymentPromotions | ¿Tienen alguna promoción con mi banco? |
 | howToUseCoupon | ¿Cómo aplico mi cupón de descuento? |
 | invoiceProblem | Tengo un problema con mi factura |
+| taxInformation | ¿Los precios incluyen impuestos? |
 | absentRecipient | ¿Qué pasa si no hay nadie para recibir el pedido? |
 | incompleteOrder | ¿Qué hago si mi pedido llegó incompleto? |
 | promotionIssues | Tengo un problema con las promociones |
