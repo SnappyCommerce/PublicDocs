@@ -934,6 +934,64 @@
 }
 ```
 
+## executeIntegrationsProvider
+
+#### Parameters
+
+| Parameter    | Type   | required | Description                                         |
+| ------------ | ------ | -------- | --------------------------------------------------- |
+| functionName | String | true     | "getAccountInformation"                             |
+| botUuid      | String | true     | botUuid that is saved in the context                |
+| providerName | String | true     | Name of providers that wants to be executed         |
+| parameters   | String | false    | parameters that are needed to execute the provider  |
+
+The only providerName allowed is "accountInformation" at the moment
+
+#### Result Example
+
+```json
+[
+	{
+		"integration": "cresi",
+		"value": {
+			"name": "TARJETAS P BRENDA",
+			"total": "224727",
+			"minPayment": "0",
+			"paymentLimit": "2024-06-03",
+			"availablePoints": "1720",
+			"recentMovements": [
+				{
+					"code": "CARGO       ",
+					"date": "2024-05-27",
+					"amount": "12499.00"
+				},
+				{
+					"code": "CARGO       ",
+					"date": "2024-05-24",
+					"amount": "19343.00"
+				},
+				{
+					"code": "CARGO       ",
+					"date": "2024-05-23",
+					"amount": "19343.00"
+				},
+				{
+					"code": "CARGO       ",
+					"date": "2024-05-20",
+					"amount": "173542.00"
+				},
+				{
+					"code": "CARGO       ",
+					"date": "2024-05-15",
+					"amount": "63992.00"
+				}
+			],
+			"errorMessage": ""
+		}
+	}
+]
+```
+
 ---
 
  # Webhook Output
