@@ -940,10 +940,10 @@
 
 | Parameter    | Type   | required | Description                                         |
 | ------------ | ------ | -------- | --------------------------------------------------- |
-| functionName | String | true     | "getAccountInformation"                             |
+| functionName | String | true     | "executeIntegrationsProvider"                             |
 | botUuid      | String | true     | botUuid that is saved in the context                |
 | providerName | String | true     | Name of providers that wants to be executed         |
-| parameters   | String | false    | parameters that are needed to execute the provider  |
+| parameters   | Object | false    | parameters that are needed to execute the provider  |
 
 The only providerName allowed is "accountInformation" at the moment
 
