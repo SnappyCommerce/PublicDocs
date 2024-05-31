@@ -19,8 +19,8 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:offerAdditionalAssistance | Offers the user additional assistance options |
  | action:setSector:_sector_ | Assigns the conversation to a sector |
  | action:setTopic:_topic_ | Appends a topic to the conversation topics and sets it as the conversation's current topic |
- | action:promotions:_todaysPromotions_ | Will show valid promotions (Promotions only valid today if the todaysPromotions parameter is set to true) |
- | action:faq:_faqKey_ | Will show the answer to an FAQ |
+ | action:promotions:_todaysPromotions_ | Shows valid promotions (Promotions only valid today if the todaysPromotions parameter is set to true) |
+ | action:faq:_faqKey_ | Shows the answer to an FAQ |
 
 ### Enabling Menu Postbacks in Notification Messages
 Notification messages sent proactively to customers can support buttons, but due to gupshup limitations they do not support postback values. In order to work around this issue, there is a Notification Buttons package that uses notification contexts in order to process actions related to these buttons.
