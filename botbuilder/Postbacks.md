@@ -7,7 +7,6 @@ These are some postbacks made specifically for clients to use in their menu conf
  | Postback                   | Description                              |
  | -------------------------  | ---------------------------------------- |
  | action:menu:_menuUuid_     | Takes the user to another menu           |
- | action:knowledge:_knowledgeQuery_                    | Shows knowledge using a set query                                   |
  | action:knowledgeByKey:_knowledgeKey_                 | Shows knowledge using a key                                   |
  | action:fetchKnowledgeAndCreateTicket:_knowledgeQuery_:_ticketReason_ | Shows knowledge using a set query and then jumps to create a ticket. _ticketReason_ is optional |
  | action:fetchKnowledgeByKeyAndCreateTicket:_knowledgeKey_:_ticketReason_ | Shows knowledge using a key and then jumps to create a ticket. _ticketReason_ is optional |
