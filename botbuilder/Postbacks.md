@@ -31,6 +31,9 @@ For example, a notification template that uses two buttons should look like this
 
 _Disclaimer: in order to avoid any user inputs from potentially being flagged as button interactions incorrectly, these buttons will only be valid in the first interaction after the user receives their notification message. If the user types any other message or interacts with the bot in any other way, the buttons will no longer be valid as such._
 
+>[!TIP]
+>The same effect can be achieved without buttons using the contexts **hasPostNotificationAction** and **postNotificationAction:_actions_** In this case any actions set will be executed after the user replies to the notification, no matter what the user says in their message.
+
 ## Other Postbacks
 These are some postbacks that we use in other flows internally
  ### Catalog
