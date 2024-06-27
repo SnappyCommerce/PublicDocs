@@ -759,6 +759,76 @@
 }
 ```
 
+ ---
+
+### fetchBranches
+#### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "fetchBranches"                                    |
+ | query   | String | false | Filter branches by the provided query (only will filter by name) |
+ | address | String | false | Order results by closest to the address |
+ | point   | Object | false | Order results by closest to the point |
+
+#### Result Example
+```json
+{
+	"branches": [
+		{
+			"uuid": "4979c755-e830-43b8-82d0-bbcb498ffee6",
+			"name": "Algun Lugar 1",
+			"address": "Champagnat 1050, Pilar, Buenos Aires, Argentina",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id risus nec felis vehicula sodales. Pellentesque tortor est, egestas in tempor sed, pulvinar condimentum mi.",
+			"phone": "+54 9 11 12344567",
+			"schedules": [
+				{
+					"day": 0,
+					"endTime": 1140,
+					"startTime": 0
+				},
+				{
+					"day": 1,
+					"endTime": 1140,
+					"startTime": 0
+				},
+				{
+					"day": 2,
+					"endTime": 1140,
+					"startTime": 0
+				},
+				{
+					"day": 3,
+					"endTime": 900,
+					"startTime": 750
+				},
+				{
+					"day": 4,
+					"endTime": 900,
+					"startTime": 750
+				},
+				{
+					"day": 3,
+					"endTime": 660,
+					"startTime": 540
+				},
+				{
+					"day": 4,
+					"endTime": 660,
+					"startTime": 540
+				}
+			],
+			"createdAt": "2024-06-14T15:16:58.866Z",
+			"updatedAt": "2024-06-14T16:05:47.611Z",
+			"latlng": {
+				"lat": -34.445106,
+				"lng": -58.9214688
+			}
+		}
+	]
+}
+```
+---
+
 ### fetchPromotions
 #### Parameters
  | Parameter        | Type     | required | Description                                   |
