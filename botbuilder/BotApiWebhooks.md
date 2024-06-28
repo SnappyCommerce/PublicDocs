@@ -709,14 +709,15 @@
  ---
 ### fetchKnowledges
  #### Parameters
- | Parameter        | Type   | required | Description                                      |
- | ---------------- | ------ | ---------| ------------------------------------------------ |
- | functionName     | String |   true   | "fetchKnowledges"                                |
- | botUuid          | String |   true   | botUuid that is saved in the context             |
- | query            | String |   true   | words you wanna search by                        |
- | amount           | Number |   false  | amount of knowledges on the response             |
- | maxDistance      | Number |   false  | Max distance for the responses                   |
- | chunks           | Number |   false  | Amount of chunks to bring around the matched one |
+ | Parameter        | Type     | required | Description                                                                               |
+ | ---------------- | -------- | ---------| ----------------------------------------------------------------------------------------- |
+ | functionName     | String   |   true   | "fetchKnowledges"                                                                         |
+ | botUuid          | String   |   true   | botUuid that is saved in the context                                                      |
+ | query            | String   |   true   | words you wanna search by                                                                 |
+ | amount           | Number   |   false  | amount of knowledges on the response                                                      |
+ | maxDistance      | Number   |   false  | Max distance for the responses                                                            |
+ | chunks           | Number   |   false  | Amount of chunks to bring around the matched one                                          |
+ | categories       | String[] |   false  | Array of categories to filter by. Default Categories are `faqs`, `promotions`, `branches` |
 
  #### Result Example
  ```json
