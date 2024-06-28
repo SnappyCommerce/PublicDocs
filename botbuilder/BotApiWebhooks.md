@@ -709,13 +709,14 @@
  ---
 ### fetchKnowledges
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "fetchKnowledges"                             |
- | botUuid          | String |   true   | botUuid that is saved in the context          |
- | query            | String |   true   | words you wanna search by                     |
- | amount           | String |   false  | amount of knowledges on the response          |
- | maxDistance      | String |   false  | Max distance for the responses                |
+ | Parameter        | Type   | required | Description                                      |
+ | ---------------- | ------ | ---------| ------------------------------------------------ |
+ | functionName     | String |   true   | "fetchKnowledges"                                |
+ | botUuid          | String |   true   | botUuid that is saved in the context             |
+ | query            | String |   true   | words you wanna search by                        |
+ | amount           | Number |   false  | amount of knowledges on the response             |
+ | maxDistance      | Number |   false  | Max distance for the responses                   |
+ | chunks           | Number |   false  | Amount of chunks to bring around the matched one |
 
  #### Result Example
  ```json
