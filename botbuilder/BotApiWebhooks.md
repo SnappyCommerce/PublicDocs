@@ -772,6 +772,9 @@
  | address | String | false | Order results by closest to the address |
  | point   | Object | false | Order results by closest to the point |
 
+>[!NOTE]
+>To fetch by point, parameter "point" would need the following format: { "lat": -40.123123, "lng": -50.12314 } with its values being of type "number".
+
 #### Result Example
 ```json
 {
