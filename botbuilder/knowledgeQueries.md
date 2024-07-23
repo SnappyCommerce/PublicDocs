@@ -83,3 +83,4 @@ These are the queries used for each intent:
 | addProductToExistingOrder | ¿Puedo agregar un producto a mi orden? |
 | orderDeliverySelectionProblem | No puedo elegir la forma de envío que quiero |
 | taxInformation | ¿Los Impuestos están incluidos en el precio? |
+| genericProductProblem | Tengo un problema con un producto |
