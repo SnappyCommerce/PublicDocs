@@ -17,6 +17,39 @@ Custom Contexts are contexts that can be applied by clients in the **behaviour**
 | humanAssistance.requiresContact | Forces users to create a contact before requesting human assistance |
 | humanAssistance.requiresTicket | Forces users to create a ticket before requesting human assistance |
 
+## Custom JSON Contexts
+Custom JSON Contexts are very similar to Custom Contexts in the sense that they can be set by the client. However, Custom JSON Contexts are in the format of a JSON Object that can be edited freely by the client, to leverage different JSON data types. The bot support the following Custom JSON Contexts:
+
+### Custom Topics Data
+Allows the client to map different topics to new ticket reasons and subreasons (subreasons optional). The Custom Topics Data can override an existing topic-reason map or assign reasons and subreasons to custom topics set by the client through menus.
+Used in the following format:
+```
+{
+  "customTopicsData": {
+    "desiredTopic": {
+        "ticketReason": "desiredReason",
+        "ticketSubreason": "desiredSubreason"
+      }
+  }
+}
+```
+
+### Action By Message
+Allows the client to map a specific message(s) to [menu actions](https://github.com/SnappyCommerce/PublicDocs/blob/main/botbuilder/Postbacks.md#client-menu-postbacks). This way, when the bot recieves a set message, it executes the defined actions. Used ideally with whatsapp links that come with preset messages.
+> [!CAUTION]
+> If the set message is too generic, there is a risk that a user will type in the message, which could result in strange bot behaviour
+
+Used in the following format:
+```
+{
+    "actionByMessage": [
+            {
+                "message": "message",
+                "actions": "actions string"
+            }
+        ]
+}
+```
 
 ## Main Context
 These are all the contexts that the bot receives from labs at the start of or during a conversation. These can all be evaluated and used by the bot together with any contexts set by the bot itself in the bot builder.
