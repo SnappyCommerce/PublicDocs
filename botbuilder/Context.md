@@ -35,7 +35,7 @@ Used in the following format:
 ```
 
 ### Action By Message
-Allows the client to map a specific message(s) to [menu actions](https://github.com/SnappyCommerce/PublicDocs/blob/main/botbuilder/Postbacks.md#client-menu-postbacks). This way, when the bot recieves a set message, it executes the defined actions. Used ideally with whatsapp links that come with preset messages.
+Allows the client to map a specific message(s) to [menu actions](https://github.com/SnappyCommerce/PublicDocs/blob/main/botbuilder/Postbacks.md#client-menu-postbacks). This way, when the bot recieves a set message, it executes the defined actions. Multiple actions can be used by separating each action with ';' and repeating the 'action:' string, e.g.: 'action:transferToHuman;action:survey'. Used ideally with whatsapp links that come with preset messages.
 > [!CAUTION]
 > If the set message is too generic, there is a risk that a user will type in the message, which could result in strange bot behaviour
 
