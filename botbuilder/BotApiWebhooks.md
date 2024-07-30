@@ -59,13 +59,65 @@
  | asyncIntegration | Boolean| If true will  run asynchronous the integration |
 
 ##### *Ticket Object:
- | Propertie       | type   | Description                                      |
+ | Property        | type   | Description                                      |
  | --------------- | ------ | -------------------------------------------------|
  | title           | String | Ticket title                                     |
  | description     | String | ticket description                               |
  | priority        | Number | Number from 1 to 5. 1 beeing the lowest priority |
  | status          | String | valid status key (It has to be in labs)          |
  | ticketReason    | String | valid reason key (IT has to be in labs)          |
+ | ticketSubreason | String | valid subreason key (IT has to be in labs)       |
+
+ #### Result example
+ ```json
+	{
+		"ticket": {
+			"id": "44",
+			"uuid": "c1b41f1c-4853-4db6-8384-3e26ab86b0a4",
+			"title": "Nuevo Ticket facu3 - ",
+			"description": " - ",
+			"sectorId": "1",
+			"reasonId": "7",
+			"subreasonId": null,
+			"statusId": "1",
+			"priority": "3",
+			"storeId": "3",
+			"assignedTo": null,
+			"createdBy": null,
+			"createdAt": "2021-03-03T18:42:48.540Z",
+			"updatedAt": null,
+			"conversationUuid": "2602fcd0-7c50-  11eb-9ea9-eb620888afcb",
+			"status": {
+				"id": "1",
+				"key": "open",
+				"name": "Open",
+				"color": "#f5f5f5",
+				"storeId": null,
+				"isDefault": true
+			}
+		}
+	}
+ ```
+ ___
+  ---
+### updateTicket
+ #### Parameters
+ | Parameter        | Type   | Description                                       |
+ | ---------------  | ------ | ------------------------------------------------- |
+ | functionName     | String | "updateTicket"                                    |
+ | ticket           | Object | ticket object*                                    |
+ | ticketUuid       | String | ticket Uuid (ticketUuid or ticketFid is required) |
+ | ticketFid        | String | ticket Fid (ticketUuid or ticketFid is required)  |
+
+##### *Ticket Object:
+ | Property        | type   | Description                                      |
+ | --------------- | ------ | -------------------------------------------------|
+ | title           | String | Ticket title                                     |
+ | description     | String | ticket description                               |
+ | priority        | Number | Number from 1 to 5. 1 beeing the lowest priority |
+ | status          | String | valid status key (It has to be in labs)          |
+ | ticketReason    | String | valid reason key (IT has to be in labs)          |
+ | ticketSubreason | String | valid subreason key (IT has to be in labs)       |
 
  #### Result example
  ```json
