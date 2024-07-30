@@ -99,7 +99,6 @@
 	}
  ```
  ___
-  ---
 ### updateTicket
  #### Parameters
  | Parameter        | Type   | Description                                       |
