@@ -9,6 +9,7 @@ Custom Contexts are contexts that can be applied by clients in the **behaviour**
 | skipSpecificationFilter:_filterName_ | Stops any specification filter from showing up among the filters offered to the user (e.g.: skipSpecificationFilter:Color) |
 | contacts.requiresEmail | Forces contacts to have an email before creating a ticket |
 | contacts.requiresPhoneNumber | Forces contacts to have a phone number before creating a ticket |
+| contacts.requiresDocument | Asks the user for their document number when creating a contact |
 | contacts.skipPhoneNumber | Skips the question for a user's phone number when creating a contact |
 | disableWhatsappBot | Limits all bot interactions in whatsapp to requesting human assistance |
 | disableInstagramBot | Limits all bot interactions in instagram to requesting human assistance |
