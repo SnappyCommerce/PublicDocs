@@ -12,7 +12,7 @@ These are some postbacks made specifically for clients to use in their menu conf
  | action:transferToHuman | Requests live human assistance |
  | action:getOrderStatus | Takes the user to the order status flow |
  | action:productSearch | Takes the user to the product catalog |
- | action:getBranches | Takes the user to the branches flow |
+ | action:getBranches:_searchType_:_mainBranchUuid_ | Takes the user to the branches flow. The _searchType_ parameter can be 'askForLocation' or 'showAllBranches' and defines if the bot will ask the user for their location or show all branches directly. When using 'showAllBranches', a branch uuid can be provided as the second parameter to allow a specific branch to be shown first. |
  | action:survey | Takes the user to the satisfaction survey |
  | action:offerAdditionalAssistance | Offers the user additional assistance options |
  | action:setSector:_sector_ | Assigns the conversation to a sector |
