@@ -84,3 +84,4 @@ These are the queries used for each intent:
 | orderDeliverySelectionProblem | No puedo elegir la forma de envío que quiero |
 | taxInformation | ¿Los Impuestos están incluidos en el precio? |
 | genericProductProblem | Tengo un problema con un producto |
+| wantToPay | ¿Cómo puedo realizar el pago?|
