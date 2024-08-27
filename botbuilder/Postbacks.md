@@ -43,8 +43,6 @@ These are some postbacks that we use in other flows internally
  | selectSubcategory:_categoryId_:_subCategoryId_          | Selects a subcategory from the product catalog. Requires the conversation to have loaded categoriesData |
  | filterBySpec:_specName_       | Sets a specification for the user to filter in the catalog (eg.: Filter by Color). Requires the conversation to have loaded specification data and a selected subcategory. _specName_ can be "none" to remove all applied filters |
  | filterBySpecValue:{"id":_specId_,"value":_specValue_} | Sets a value inside a specification to be filtered (eg.: Filter by Color: Blue). Requires the conversation to have a selected subcategory. _specValue_ can be "any/all" to remove filters for that _specId_. |
- | specOptionsNextPage | Shows the next page within the specification filtering menu |
- | specOptionsLastPage | Shows the previous page within the specification filtering menu |
  | endSpecFiltering | Requires the conversation to have a selected product subcategory. Shows products from the selected subcategory with any filters previously applied |
  | searchOtherProducts | Restarts the catalog flow |
  | goBackToMainMenu | Returns to the main menu |
