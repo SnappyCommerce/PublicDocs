@@ -347,8 +347,11 @@ Here's an example for a custom createTicket config for the intent "fileAClaim":
           "example2"
         ]
       }
+
     }
 }
 ```
 
-"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information).
+"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information). As in the following image:
+
+<img width="1428" alt="Screenshot 2024-08-29 at 14 33 32" src="https://github.com/user-attachments/assets/b3c9ab99-2dde-47d7-9d97-0cce94ab8f38">
