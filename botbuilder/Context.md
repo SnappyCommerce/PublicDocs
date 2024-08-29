@@ -241,6 +241,8 @@ The following data is inside $snappyData This is contact information received fr
 | isSubscriber | true if the user is subscribed to the newsletter | Boolean |
 
 ## config
+The following data is inside config This is an object prepared to let the brand modify the usage of certain flows.
+
 | Config Name | Default Set Values | Possible Values |
 | ------------- | ------------- | ------------- |
 | branches -> requirements | location | location |
@@ -250,12 +252,14 @@ The following data is inside $snappyData This is contact information received fr
 | createTicket -> default -> filesAmmount | null | Any number |
 | flags | "forcedTermsAndConditions": false, "limitedInstagramBot": false, "limitedWhatsappBot": false, "limitedFacebookBot": false | Personalized values are allowed |
 | generateCheckout -> requirements | firstName, lastName, email | fistName, lastName, email |
-| humanAssistance -> requirements |  | contact, ticket |
+| humanAssistance -> default -> requirements |  | contact, ticket |
 | productSearch -> specificationFilter -> skipValues |  | Personalized values are allowed |
 
-Same applies for intent's requirements when creating a ticket. An example would be:
+The context *flags* simply configures flows contained in it.
 
-Intent configurated: "fileAClaim"
+Inside both *createTicket* and *humanAssistance* we have the "default" object, but this can be modified depending on the intent, declaring its own requirements. An example would be:
+
+  intent configurated: "fileAClaim"
 ```
 {
     "createTicket": {
@@ -283,4 +287,4 @@ Intent configurated: "fileAClaim"
 }
 ```
 
-"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information)
+"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information).
