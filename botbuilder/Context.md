@@ -240,10 +240,10 @@ The following data is inside $snappyData This is contact information received fr
 | phoneNumber | The user's phone number | String |
 | isSubscriber | true if the user is subscribed to the newsletter | Boolean |
 
-## config
-The following data is inside config This is an object prepared to let the brand modify the usage of certain flows. customContexts does not need to have the complete context, just the part that we want to change.
+## Config
+The config object is used to modify the bot's behaviour in different flows. Clients can override the config using Custom JSON Contexts. The Custom JSON Contexts do not need to have the complete config context, instead clients can just override the values that they want to change. For example, if the client wants to change the branches flow requirements, they only need to copy that part in their Custom JSON Contexts, not the whole config object.
 
-JSON:
+This is the default config JSON:
 ```
 "config": {
 	"flags": {
@@ -307,7 +307,7 @@ JSON:
 }
 ```
 
-| Config Name | Default Set Values | Possible Values |
+| Config Name | Default Values | Possible Values |
 | ------------- | ------------- | ------------- |
 | branches -> requirements | location | location |
 | createContact -> requirements | firstName, email, phoneNumber | fistName, lastName, email, phoneNumber, documentNumber |
@@ -319,11 +319,11 @@ JSON:
 | humanAssistance -> default -> requirements |  | contact, ticket |
 | productSearch -> specificationFilter -> skipValues |  | Personalized values are allowed |
 
-The context *flags* simply configures flows contained in it.
+The *flags* object simply contaings flags that enable/disable behaviours not specific to any flows (similar to older custom contexts).
 
-Inside both *createTicket* and *humanAssistance* we have the "default" object, but this can be modified depending on the intent, declaring its own requirements. An example would be:
+Inside both *createTicket* and *humanAssistance* there is a "default" object containing that flow's default configuration, but additional objects can be introduced for different entities, meaning the bot will use a different configuration when creating a ticket or requesting human assistance for that specific intent. In the case of *humanAssistance*, having an intent present in the config will trigger a human assistance request when that intent is recognized, after the bot gives a response.
 
-  intent configurated: "fileAClaim"
+Here's an example for a custom createTicket config for the intent "fileAClaim":
 ```
 {
     "createTicket": {
