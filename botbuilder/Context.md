@@ -239,3 +239,48 @@ The following data is inside $snappyData This is contact information received fr
 | firstName | The user's first name | String |
 | phoneNumber | The user's phone number | String |
 | isSubscriber | true if the user is subscribed to the newsletter | Boolean |
+
+## config
+| Config Name | Default Set Values | Possible Values |
+| ------------- | ------------- | ------------- |
+| branches -> requirements | location | location |
+| createContact -> requirements | firstName, email, phoneNumber | fistName, lastName, email, phoneNumber, documentNumber |
+| createTicket -> default -> requirements | ticketReason, ticketSubreason, comment | ticketReason, ticketSubreason, comment, files, orderN |
+| createTicket -> default -> optionals | files | comment, files |
+| createTicket -> default -> filesAmmount | null | Any number |
+| flags | "forcedTermsAndConditions": false, "limitedInstagramBot": false, "limitedWhatsappBot": false, "limitedFacebookBot": false | Personalized values are allowed |
+| generateCheckout -> requirements | firstName, lastName, email | fistName, lastName, email |
+| humanAssistance -> requirements |  | contact, ticket |
+| productSearch -> specificationFilter -> skipValues |  | Personalized values are allowed |
+
+Same applies for intent's requirements when creating a ticket. An example would be:
+
+Intent configurated: "fileAClaim"
+```
+{
+    "createTicket": {
+      "enabled": true
+      "default": {
+        "optionals": [
+          "files"
+        ],
+        "requirements": [
+          "ticketReason",
+          "ticketSubreason",
+          "comment"
+        ],
+        "MinFilesAmount": ""
+      },
+      "fileAClaim": {
+        "requirements": [
+          "ticketReason",
+          "file",
+          "example1"
+          "example2"
+        ]
+      }
+    }
+}
+```
+
+"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information)
