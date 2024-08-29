@@ -246,66 +246,66 @@ The following data is inside config This is an object prepared to let the brand 
 Example:
 ```
 "config": {
-			"flags": {
-				"limitedFacebookBot": false,
-				"limitedWhatsappBot": false,
-				"limitedInstagramBot": false,
-				"forcedTermsAndConditions": false
-			},
-			"branches": {
-				"enabled": true,
-				"requirements": [
-					"location"
-				]
-			},
-			"isDefault": true,
-			"createTicket": {
-				"default": {
-					"optionals": [
-						"files",
-						"comment"
-					],
-					"requirements": [
-						"ticketReason",
-						"ticketSubreason"
-					],
-					"MinFilesAmount": ""
-				},
-				"enabled": true
-			},
-			"createContact": {
-				"enabled": true,
-				"requirements": [
-					"firstName",
-					"email",
-					"phoneNumber"
-				]
-			},
-			"productSearch": {
-				"enabled": true,
-				"specificationFilter": {
-					"skipValues": []
-				}
-			},
-			"humanAssistance": {
-				"default": {
-					"requirements": []
-				},
-				"enabled": true,
-				"fileAClaim": {
-					"requirements": []
-				}
-			},
-			"generateCheckout": {
-				"enabled": true,
-				"requirements": [
-					"firstName",
-					"lastName",
-					"email"
-				]
-			}
+	"flags": {
+		"limitedFacebookBot": false,
+		"limitedWhatsappBot": false,
+		"limitedInstagramBot": false,
+		"forcedTermsAndConditions": false
+	},
+	"branches": {
+		"enabled": true,
+		"requirements": [
+			"location"
+		]
+	},
+	"isDefault": true,
+	"createTicket": {
+		"default": {
+			"optionals": [
+				"files",
+				"comment"
+			],
+			"requirements": [
+				"ticketReason",
+				"ticketSubreason"
+			],
+			"MinFilesAmount": ""
 		},
-  ```
+		"enabled": true
+	},
+	"createContact": {
+		"enabled": true,
+		"requirements": [
+			"firstName",
+			"email",
+			"phoneNumber"
+		]
+	},
+	"productSearch": {
+		"enabled": true,
+		"specificationFilter": {
+			"skipValues": []
+		}
+	},
+	"humanAssistance": {
+		"default": {
+			"requirements": []
+		},
+		"enabled": true,
+		"fileAClaim": {
+			"requirements": []
+		}
+	},
+	"generateCheckout": {
+		"enabled": true,
+		"requirements": [
+			"firstName",
+			"lastName",
+			"email"
+		]
+	}
+}
+```
 
 | Config Name | Default Set Values | Possible Values |
 | ------------- | ------------- | ------------- |
