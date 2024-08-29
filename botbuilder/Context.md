@@ -241,9 +241,9 @@ The following data is inside $snappyData This is contact information received fr
 | isSubscriber | true if the user is subscribed to the newsletter | Boolean |
 
 ## config
-The following data is inside config This is an object prepared to let the brand modify the usage of certain flows.
+The following data is inside config This is an object prepared to let the brand modify the usage of certain flows. customContexts does not need to have the complete context, just the part that we want to change.
 
-Example:
+JSON:
 ```
 "config": {
 	"flags": {
