@@ -321,7 +321,7 @@ This is the default config JSON:
 
 The *flags* object simply contains flags that enable/disable behaviours not specific to any flows (similar to older custom contexts).
 
-Inside both *createTicket* and *humanAssistance* there is a "default" object containing that flow's default configuration, but additional objects can be introduced for different entities, meaning the bot will use a different configuration when creating a ticket or requesting human assistance for that specific intent. In the case of *humanAssistance*, having an intent present in the config will trigger a human assistance request when that intent is recognized, after the bot gives a response.
+Inside both *createTicket* and *humanAssistance* there is a "default" object containing each flow's default configuration, but additional objects can be introduced for different intents, meaning the bot will use a different configuration when creating a ticket or requesting human assistance for that specific intent. In the case of *humanAssistance*, having an intent present in the config will trigger a human assistance request when that intent is recognized, after the bot gives a response.
 
 Here's an example for a custom createTicket config for the intent "fileAClaim":
 ```
