@@ -3,23 +3,127 @@ This document shows and explains what data is sent to BotBuilders via the conver
 
 ## Custom Contexts
 Custom Contexts are contexts that can be applied by clients in the **behaviour** tab of the bot configuration in Labs. They can be used to alter the bot's behaviour in certain flows without necessarily using the bot builder to edit said flows, with the requirement that the flow has been built with the custom contexts in mind.
-| Value | Description |
-| ------------- | ------------- |
-| noTicketCreation | Disables the ticket creation and instead responds with a text when needed (translation path: botFunctions.createTicket.ticketCreationDisabled) |
-| skipSpecificationFilter:_filterName_ | Stops any specification filter from showing up among the filters offered to the user (e.g.: skipSpecificationFilter:Color) |
-| contacts.requiresEmail | Forces contacts to have an email before creating a ticket |
-| contacts.requiresPhoneNumber | Forces contacts to have a phone number before creating a ticket |
-| contacts.requiresDocument | Asks the user for their document number when creating a contact |
-| contacts.skipPhoneNumber | Skips the question for a user's phone number when creating a contact |
-| disableWhatsappBot | Limits all bot interactions in whatsapp to requesting human assistance |
-| disableInstagramBot | Limits all bot interactions in instagram to requesting human assistance |
-| disableFacebookBot | Limits all bot interactions in facebook to requesting human assistance |
-| forceTermsAndConditions | Requests user to accept terms and conditions before continuing conversation |
-| humanAssistance.requiresContact | Forces users to create a contact before requesting human assistance |
-| humanAssistance.requiresTicket | Forces users to create a ticket before requesting human assistance |
+
+There are currently no supported Custom Contexts. Previously supported custom contexts were replaced by the use of custom [configs](#Config)
 
 ## Custom JSON Contexts
 Custom JSON Contexts are very similar to Custom Contexts in the sense that they can be set by the client. However, Custom JSON Contexts are in the format of a JSON Object that can be edited freely by the client, to leverage different JSON data types. The bot support the following Custom JSON Contexts:
+
+### Config
+The config object is used to modify the bot's behaviour in different flows. Clients can override the config using Custom JSON Contexts. The Custom JSON Contexts do not need to have the complete config context, instead clients can just override the values that they want to change. For example, if the client wants to change the branches flow requirements, they only need to copy that part in their Custom JSON Contexts, not the whole config object.
+
+This is the default config JSON (when not overwritten by a custom Config):
+```
+"config": {
+	"flags": {
+		"limitedFacebookBot": false,
+		"limitedWhatsappBot": false,
+		"limitedInstagramBot": false,
+		"forcedTermsAndConditions": false
+	},
+	"branches": {
+		"enabled": true,
+		"requirements": [
+			"location"
+		]
+	},
+	"isDefault": true,
+	"createTicket": {
+		"default": {
+			"optionals": [
+				"files",
+				"comment"
+			],
+			"requirements": [
+				"ticketReason",
+				"ticketSubreason"
+			],
+			"MinFilesAmount": ""
+		},
+		"enabled": true
+	},
+	"createContact": {
+		"enabled": true,
+		"requirements": [
+			"firstName",
+			"email",
+			"phoneNumber"
+		]
+	},
+	"productSearch": {
+		"enabled": true,
+		"specificationFilter": {
+			"skipValues": []
+		}
+	},
+	"humanAssistance": {
+		"default": {
+			"requirements": []
+		},
+		"enabled": true,
+		"fileAClaim": {
+			"requirements": []
+		}
+	},
+	"generateCheckout": {
+		"enabled": true,
+		"requirements": [
+			"firstName",
+			"lastName",
+			"email"
+		]
+	}
+}
+```
+
+| Config Name | Default Values | Possible Values |
+| ------------- | ------------- | ------------- |
+| branches -> requirements | location | location |
+| createContact -> requirements | firstName, email, phoneNumber | fistName, lastName, email, phoneNumber, documentNumber |
+| createTicket -> default -> requirements | ticketReason, ticketSubreason, comment | ticketReason, ticketSubreason, comment, files, orderN, any additional data that the bot should ask for |
+| createTicket -> default -> optionals | files | comment, files |
+| createTicket -> default -> filesAmmount | null | Any number |
+| flags | "forcedTermsAndConditions": false, "limitedInstagramBot": false, "limitedWhatsappBot": false, "limitedFacebookBot": false | Personalized values are allowed |
+| generateCheckout -> requirements | firstName, lastName, email | fistName, lastName, email |
+| humanAssistance -> default -> requirements |  | contact, ticket |
+| productSearch -> specificationFilter -> skipValues |  | Personalized values are allowed |
+
+The *flags* object simply contains flags that enable/disable behaviours not specific to any flows (similar to older custom contexts).
+
+Inside both *createTicket* and *humanAssistance* there is a "default" object containing each flow's default configuration, but additional objects can be introduced for different intents, meaning the bot will use a different configuration when creating a ticket or requesting human assistance for that specific intent. In the case of *humanAssistance*, having an intent present in the config will trigger a human assistance request when that intent is recognized, after the bot gives a response.
+
+Here's an example for a custom createTicket config for the intent "fileAClaim":
+```
+{
+    "createTicket": {
+      "enabled": true
+      "default": {
+        "optionals": [
+          "files"
+        ],
+        "requirements": [
+          "ticketReason",
+          "ticketSubreason",
+          "comment"
+        ],
+        "MinFilesAmount": ""
+      },
+      "fileAClaim": {
+        "requirements": [
+          "ticketReason",
+          "file",
+          "example1"
+          "example2"
+        ]
+      }
+
+    }
+}
+```
+
+"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information). As in the following image:
+
+<img width="1428" alt="Screenshot 2024-08-29 at 14 33 32" src="https://github.com/user-attachments/assets/b3c9ab99-2dde-47d7-9d97-0cce94ab8f38">
 
 ### Custom Topics Data
 Allows the client to map different topics to new ticket reasons and subreasons (subreasons optional). The Custom Topics Data can override an existing topic-reason map or assign reasons and subreasons to custom topics set by the client through menus.
@@ -239,119 +343,3 @@ The following data is inside $snappyData This is contact information received fr
 | firstName | The user's first name | String |
 | phoneNumber | The user's phone number | String |
 | isSubscriber | true if the user is subscribed to the newsletter | Boolean |
-
-## Config
-The config object is used to modify the bot's behaviour in different flows. Clients can override the config using Custom JSON Contexts. The Custom JSON Contexts do not need to have the complete config context, instead clients can just override the values that they want to change. For example, if the client wants to change the branches flow requirements, they only need to copy that part in their Custom JSON Contexts, not the whole config object.
-
-This is the default config JSON:
-```
-"config": {
-	"flags": {
-		"limitedFacebookBot": false,
-		"limitedWhatsappBot": false,
-		"limitedInstagramBot": false,
-		"forcedTermsAndConditions": false
-	},
-	"branches": {
-		"enabled": true,
-		"requirements": [
-			"location"
-		]
-	},
-	"isDefault": true,
-	"createTicket": {
-		"default": {
-			"optionals": [
-				"files",
-				"comment"
-			],
-			"requirements": [
-				"ticketReason",
-				"ticketSubreason"
-			],
-			"MinFilesAmount": ""
-		},
-		"enabled": true
-	},
-	"createContact": {
-		"enabled": true,
-		"requirements": [
-			"firstName",
-			"email",
-			"phoneNumber"
-		]
-	},
-	"productSearch": {
-		"enabled": true,
-		"specificationFilter": {
-			"skipValues": []
-		}
-	},
-	"humanAssistance": {
-		"default": {
-			"requirements": []
-		},
-		"enabled": true,
-		"fileAClaim": {
-			"requirements": []
-		}
-	},
-	"generateCheckout": {
-		"enabled": true,
-		"requirements": [
-			"firstName",
-			"lastName",
-			"email"
-		]
-	}
-}
-```
-
-| Config Name | Default Values | Possible Values |
-| ------------- | ------------- | ------------- |
-| branches -> requirements | location | location |
-| createContact -> requirements | firstName, email, phoneNumber | fistName, lastName, email, phoneNumber, documentNumber |
-| createTicket -> default -> requirements | ticketReason, ticketSubreason, comment | ticketReason, ticketSubreason, comment, files, orderN |
-| createTicket -> default -> optionals | files | comment, files |
-| createTicket -> default -> filesAmmount | null | Any number |
-| flags | "forcedTermsAndConditions": false, "limitedInstagramBot": false, "limitedWhatsappBot": false, "limitedFacebookBot": false | Personalized values are allowed |
-| generateCheckout -> requirements | firstName, lastName, email | fistName, lastName, email |
-| humanAssistance -> default -> requirements |  | contact, ticket |
-| productSearch -> specificationFilter -> skipValues |  | Personalized values are allowed |
-
-The *flags* object simply contains flags that enable/disable behaviours not specific to any flows (similar to older custom contexts).
-
-Inside both *createTicket* and *humanAssistance* there is a "default" object containing each flow's default configuration, but additional objects can be introduced for different intents, meaning the bot will use a different configuration when creating a ticket or requesting human assistance for that specific intent. In the case of *humanAssistance*, having an intent present in the config will trigger a human assistance request when that intent is recognized, after the bot gives a response.
-
-Here's an example for a custom createTicket config for the intent "fileAClaim":
-```
-{
-    "createTicket": {
-      "enabled": true
-      "default": {
-        "optionals": [
-          "files"
-        ],
-        "requirements": [
-          "ticketReason",
-          "ticketSubreason",
-          "comment"
-        ],
-        "MinFilesAmount": ""
-      },
-      "fileAClaim": {
-        "requirements": [
-          "ticketReason",
-          "file",
-          "example1"
-          "example2"
-        ]
-      }
-
-    }
-}
-```
-
-"example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information). As in the following image:
-
-<img width="1428" alt="Screenshot 2024-08-29 at 14 33 32" src="https://github.com/user-attachments/assets/b3c9ab99-2dde-47d7-9d97-0cce94ab8f38">
