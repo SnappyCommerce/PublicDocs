@@ -27,7 +27,6 @@ This is the default config JSON (when not overwritten by a custom Config):
 			"location"
 		]
 	},
-	"isDefault": true,
 	"createTicket": {
 		"default": {
 			"optionals": [
