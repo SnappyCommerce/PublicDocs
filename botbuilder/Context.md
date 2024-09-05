@@ -91,6 +91,8 @@ The *flags* object simply contains flags that enable/disable behaviours not spec
 
 Inside both *createTicket* and *humanAssistance* there is a "default" object containing each flow's default configuration, but additional objects can be introduced for different intents, meaning the bot will use a different configuration when creating a ticket or requesting human assistance for that specific intent. In the case of *humanAssistance*, having an intent present in the config will trigger a human assistance request when that intent is recognized, after the bot gives a response.
 
+If we put something in [createTicket -> default -> optionals] it must not be inside [createTicket -> default -> requirements] and viceversa.
+
 Here's an example for a custom createTicket config for the intent "fileAClaim":
 ```
 {
