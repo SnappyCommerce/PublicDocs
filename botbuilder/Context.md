@@ -46,7 +46,7 @@ This is the default config JSON (when not overwritten by a custom Config):
 		"requirements": [
 			"firstName",
 			"email",
-			"phoneNumber"
+			"phone"
 		]
 	},
 	"productSearch": {
@@ -78,7 +78,7 @@ This is the default config JSON (when not overwritten by a custom Config):
 | Config Name | Default Values | Possible Values |
 | ------------- | ------------- | ------------- |
 | branches -> requirements | location | location |
-| createContact -> requirements | firstName, email, phoneNumber | fistName, lastName, email, phoneNumber, documentNumber |
+| createContact -> requirements | firstName, email, phoneNumber | fistName, lastName, email, phone, documentNumber |
 | createTicket -> default -> requirements | ticketReason, ticketSubreason, comment | ticketReason, ticketSubreason, comment, files, orderN, any additional data that the bot should ask for |
 | createTicket -> default -> optionals | files | comment, files |
 | createTicket -> default -> filesAmmount | null | Any number |
