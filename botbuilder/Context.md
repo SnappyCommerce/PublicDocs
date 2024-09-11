@@ -97,7 +97,7 @@ Here's an example for a custom createTicket config for the intent "fileAClaim":
 ```
 {
     "createTicket": {
-      "enabled": true
+      "enabled": true,
       "default": {
         "optionals": [
           "files"
@@ -113,13 +113,14 @@ Here's an example for a custom createTicket config for the intent "fileAClaim":
         "requirements": [
           "ticketReason",
           "file",
-          "example1"
+          "example1",
           "example2"
         ]
       }
 
     }
 }
+
 ```
 
 "example1" and "example2" would need to be specified in the "texts" tab with its own translation (translation that has to be a request for the user to give that information). As in the following image:
