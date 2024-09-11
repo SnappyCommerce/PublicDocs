@@ -96,29 +96,28 @@ If we put something in [createTicket -> default -> optionals] it must not be ins
 Here's an example for a custom createTicket config for the intent "fileAClaim":
 ```
 {
-    "createTicket": {
-      "enabled": true,
-      "default": {
-        "optionals": [
-          "files"
-        ],
-        "requirements": [
-          "ticketReason",
-          "ticketSubreason",
-          "comment"
-        ],
-        "MinFilesAmount": ""
-      },
-      "fileAClaim": {
-        "requirements": [
-          "ticketReason",
-          "file",
-          "example1",
-          "example2"
-        ]
-      }
-
+  "createTicket": {
+    "enabled": true,
+    "default": {
+      "optionals": [
+        "files"
+      ],
+      "requirements": [
+        "ticketReason",
+        "ticketSubreason",
+        "comment"
+      ],
+      "MinFilesAmount": ""
+    },
+    "fileAClaim": {
+      "requirements": [
+        "ticketReason",
+        "file",
+        "example1",
+        "example2"
+      ]
     }
+  }
 }
 
 ```
