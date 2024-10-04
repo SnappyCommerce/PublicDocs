@@ -734,8 +734,9 @@
  #### snappyShippingData example
  ```json
 {
-  "fristName": "JuanoCruz",
-  "lastName": "Silva",
+  "firstName": "JuanoCruz", //required 
+  "lastName": "Silva", //required
+  "email": "test@testing.com" //required 
   "address": "Av.Corrientes",
   "number": "1234",
   "floor": "1",
