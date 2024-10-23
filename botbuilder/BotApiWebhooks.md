@@ -724,7 +724,7 @@
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "createOrder"                                 |
+ | functionName     | String |   true   | "createCheckout"                                 |
  | botUuid          | String |   true   | botUuid that is saved in the context          |
  | conversationUuid | String |   false  | optional to create checkout by conversation   |
  | cartId           | String |   false  | optional to create checkout by cart id        |
@@ -758,6 +758,76 @@
 	"checkoutData": "https://snappycommercestore.mitiendanube.com/checkout/v3/start/1391478941/7b8b44ef15b724cd85d2b01d9abdeccbcb56a436?from_store=1"
 }
  ```
+ ---
+### createOrder
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String |   true   | "createOrder"                                 |
+ | botUuid          | String |   true   | botUuid that is saved in the context          |
+ | conversationUuid | String |   false  | optional to create checkout by conversation   |
+ | cartId           | String |   false  | optional to create checkout by cart id        |
+ | shippingData     | object |   true   | snappyShippingData                            |
+
+
+ #### shippingData example
+ ```json
+{
+  "shippingProvince": "Buenos Aires",
+  "shippingCity": "Pilar",
+  "shippingPostalCode": 1629,
+  "shippingStreet1": "Calle 123",
+}
+ ```
+ #### Result Example
+ ```json
+{
+	"order": {
+		"id": 123138,
+		"uuid": "8f076401-4655-42fc-ae9f-037d932d29a7",
+		"number": 3791,
+		"statusId": 1,
+		"conversationId": 8730,
+		"contactId": 140,
+		"assignedTo": null,
+		"createdBy": null,
+		"shippingProvince": "Buenos Aires",
+		"shippingCity": "Pilar",
+		"shippingPostalCode": "1629",
+		"shippingStreet1": "Calle 123",
+		"shippingStreet2": null,
+		"shippingCost": null,
+		"subTotal": 47992,
+		"createdAt": "2024-08-16T15:44:46.121Z",
+		"updatedAt": "2024-08-16T15:44:46.095Z",
+		"storeId": 1,
+		"sectorId": 1,
+		"total": 47992,
+		"integrationOrderId": null,
+		"solvedAt": null,
+		"notes": null,
+		"orderProducts": [
+			{
+				"id": 1,
+				"orderId": 123138,
+				"baseProductTitle": "Jeans Hombre",
+				"productSku": "10",
+				"productVariants": [
+					3766,
+					3758
+				],
+				"productSubVariants": [],
+				"productImageUrl": "imageUrl",
+				"price": 59990,
+				"discount": 20,
+				"amount": 1,
+				"integrationProductId": "10"
+			}
+		]
+	}
+}
+ ```
+
  ---
 ### fetchKnowledges
  #### Parameters
