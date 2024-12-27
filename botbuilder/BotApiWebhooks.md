@@ -737,14 +737,14 @@
   "firstName": "JuanoCruz", //required 
   "lastName": "Silva", //required
   "email": "test@testing.com" //required 
-  "address": "Av.Corrientes",
+  "street": "Av.Corrientes",
   "number": "1234",
   "floor": "1",
   "locality": "CABA",
   "city": "CABA",
   "province": "CABA",
   "country": "AR",
-  "zipcode": "1234",
+  "postalCode": "1234",
   "phone": "1234567890",
   "pickupType": "pickup",
   "shipping": "No informado",
