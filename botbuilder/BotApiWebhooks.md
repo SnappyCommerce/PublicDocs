@@ -765,9 +765,9 @@
  | ---------------- | ------ | ---------| --------------------------------------------- |
  | functionName     | String |   true   | "createOrder"                                 |
  | botUuid          | String |   true   | botUuid that is saved in the context          |
- | conversationUuid | String |   false  | optional to create checkout by conversation   |
- | cartId           | String |   false  | optional to create checkout by cart id        |
- | shippingData     | object |   true   | snappyShippingData                            |
+ | conversationUuid | String |   true  | optional to create checkout by conversation   |
+ | cartId           | String |   true  | optional to create checkout by cart id        |
+ | shippingData     | object |   false   | snappyShippingData                            |
 
 
  #### shippingData example
