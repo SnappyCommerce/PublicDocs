@@ -277,6 +277,59 @@
 **Note:** Use this as an output instead of webhook to prevent your bot builder from sending a message after conversation ended
 
  ---
+ ### updateContactAddress 
+ #### Parameters
+ | Parameter        | Type   | required | Description                                   |
+ | ---------------- | ------ | ---------| --------------------------------------------- |
+ | functionName     | String | true     | "updateContactAddress"                        |
+ | botUuid          | String | true     | botUuid that is saved in the context          |
+ | conversationUuid | String | true     | conversationUuid that is saved in the context |
+ | addressId		| String | false	| addressId of the address you want to modify 	|
+ | addressUuid		| String | false	| addressUuid of the address you want to modify |
+ | address			| Object | true 	| address object							 	|
+
+**Notes:** 
+
+-Conversation must have a contact linked
+
+-Leaving both addressId and addressUuid empty will create a new address for the conversation's contact
+
+ #### address object 
+```json
+{
+	"country": "Argentina",
+	"province": "Buenos Aires",
+	"city": "Luján",
+	"street": "Calle Falsa",
+	"number": "4321",
+	"floor": "floor 3, room 4", // optional
+	"postalCode": "1234",
+	"notes": "The building is pale blue, you'll find it easily", // optional
+}
+```
+
+ #### Result Example
+```json
+{
+	"contactAddress": {
+		"id": "15",
+		"uuid": "c88d6536-cc5f-43cd-9172-a14ac2874f9e",
+		"contactId": "38520",
+		"country": "Argentina",
+		"province": "Buenos Aires",
+		"city": "Luján",
+		"street": "Calle Falsa",
+		"number": "4321",
+		"floor": null,
+		"postalCode": "1234",
+		"notes": "The building is pale blue, you'll find it easily",
+		"createdAt": "2025-01-16T16:47:27.720Z",
+		"updatedAt": "2025-01-16T16:47:27.720Z"
+	}
+}
+```
+
+ ---
  ### onlineAssistants
  #### Parameters
  | Parameter        | Type   | Description                            |
