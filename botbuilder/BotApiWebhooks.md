@@ -1102,7 +1102,7 @@
 | functionName | String | true     | "fetchCategories"                                   |
 | botUuid      | String | true     | botUuid that is saved in the context                |
 | query        | String | false    | Checks for categories that include the given string |
-
+| parentCategory | String | false | A parent category to get its children categories	 |
 #### Result Example
 
 ```json
