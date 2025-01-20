@@ -1042,7 +1042,10 @@
 				"friday"
 			],
 			"createdAt": "2024-04-24T19:32:03.199Z",
-			"updatedAt": "2024-04-25T14:13:46.401Z"
+			"updatedAt": "2024-04-25T14:13:46.401Z",
+			"categories": ["diarco-barrio"],
+			"branches": [],
+			"imageAlt": "¡SÚPER DESCUENTO! 15% de descuento en cortes de carne congelada. Oferta válida del 13 al 19 de enero de 2025 en todas las sucursales de Diarco Barrio."
 		}
 	]
 }
