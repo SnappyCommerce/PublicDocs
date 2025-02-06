@@ -361,13 +361,14 @@
  ---
  ### fetchProducts
  #### Parameters
- | Parameter        | Type   | Description                            |
- | ---------------  | ------ | ---------------------------------------|
- | functionName     | String | "fetchProducts"                        |
- | botUuid          | String | botUuid that is saved in the context   |
- | query            | String | Search products by key words           |
- | categoryId       | String | Search products by category            |
- | subCategoryId    | String | Search products by sub category        |
+ | Parameter           | Type   | Description                                     |
+ | ---------------     | ------ | ------------------------------------------------|
+ | functionName        | String | "fetchProducts"                                 |
+ | botUuid             | String | botUuid that is saved in the context            |
+ | query               | String | Search products by key words                    |
+ | categoryId          | String | Search products by category            	  |
+ | subCategoryId       | String | Search products by sub category                 |
+ | selectedCategory    | String | Search products by category (recommended)       |
 
  #### Result Example
  ```json
