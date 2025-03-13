@@ -19,7 +19,9 @@ This is the default config JSON (when not overwritten by a custom Config):
 		"limitedFacebookBot": false,
 		"limitedWhatsappBot": false,
 		"limitedInstagramBot": false,
-		"forcedTermsAndConditions": false
+		"forcedTermsAndConditions": false,
+		"GPTsatisfactionSurvey": false,
+		"satisfactionSurvey": false
 	},
 	"branches": {
 		"enabled": true,
@@ -82,7 +84,7 @@ This is the default config JSON (when not overwritten by a custom Config):
 | createTicket -> default -> requirements | ticketReason, ticketSubreason, comment | ticketReason, ticketSubreason, comment, files, orderN, any additional data that the bot should ask for |
 | createTicket -> default -> optionals | files | comment, files |
 | createTicket -> default -> filesAmmount | null | Any number |
-| flags | "forcedTermsAndConditions": false, "limitedInstagramBot": false, "limitedWhatsappBot": false, "limitedFacebookBot": false | Personalized values are allowed |
+| flags | "forcedTermsAndConditions": false, "limitedInstagramBot": false, "limitedWhatsappBot": false, "limitedFacebookBot": false, "GPTsatisfactionSurvey": false, "satisfactionSurvey": false | Personalized values are allowed |
 | generateCheckout -> requirements | firstName, lastName, email | fistName, lastName, email |
 | humanAssistance -> default -> requirements |  | contact, ticket |
 | productSearch -> specificationFilter -> skipValues |  | Personalized values are allowed |
