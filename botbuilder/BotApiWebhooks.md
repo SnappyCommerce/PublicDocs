@@ -277,6 +277,18 @@
 **Note:** Use this as an output instead of webhook to prevent your bot builder from sending a message after conversation ended
 
  ---
+ ### fetchShippingAddresses
+ | Parameter        | Type   | Required | Description                           	    |
+ | ---------------  | ------ | -------- | --------------------------------------------- |
+ | functionName     | String | true     |"fetchShippingAddresses"              		    |
+ | botUuid          | String | true     | botUuid that is saved in the context    		|
+ | conversationUuid | String | true     | conversationUuid that is saved in the context |
+
+**Notes:** 
+
+-Conversation must have a contact linked
+
+ ---
  ### updateContactAddress 
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
