@@ -1365,6 +1365,30 @@ Obtiene la encuesta de satisfacción configurada para la conversación. Detecta 
 
 ---
 
+### answerSurvey
+
+Registra la respuesta del usuario a la encuesta de satisfacción.
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                                          |
+ | ---------------- | ------ | -------- | ---------------------------------------------------- |
+ | functionName     | String | true     | "answerSurvey"                                       |
+ | botUuid          | String | true     | botUuid that is saved in the context                 |
+ | conversationUuid | String | true     | UUID de la conversación                              |
+ | rating           | Number | false    | puntaje de la encuesta                               |
+ | agentUuid        | String | false    | UUID del agente evaluado (si aplica)                 |
+ | integration      | String | false    | nombre de la integración destino                     |
+ | customValue      | Any    | false    | valor personalizado para encuestas con escala propia |
+
+#### Result Example
+```json
+{
+	"response": true
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
