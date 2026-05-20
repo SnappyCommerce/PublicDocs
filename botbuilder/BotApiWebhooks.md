@@ -1389,6 +1389,27 @@ Registra la respuesta del usuario a la encuesta de satisfacción.
 
 ---
 
+### ratingFeedback
+
+Registra un comentario de texto libre sobre la atención (complementa a `answerSurvey`).
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                          |
+ | ---------------- | ------ | -------- | ------------------------------------ |
+ | functionName     | String | true     | "ratingFeedback"                     |
+ | botUuid          | String | true     | botUuid that is saved in the context |
+ | conversationUuid | String | true     | UUID de la conversación              |
+ | feedback         | String | true     | texto del comentario                 |
+
+#### Result Example
+```json
+{
+	"response": true
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
