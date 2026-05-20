@@ -234,21 +234,24 @@
 ---
  ### updateContact 
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "updateContact"                               |
- | botUuid          | String | true     | botUuid that is saved in the context          |
- | contactId        | String | true     | contac id of the contact to update            |
- | email            | String | false    | new email of the contact                      |
- | phone            | String | false    | new phone of the contact                      |
- | facebookId       | String | false    | facebookId (It is an internal value)          |
- | instagramId      | String | false    | instagramId (It is an internal value)         |
- | firstName        | String | false    | new firstName of the contact                  |
- | lastName         | String | false    | new lastName of the contact                   |
- | country          | String | false    | new country of the contact                    |
- | isSubscriber     | Boolean| false    | wheter the new contact is subscribed or not   |
- | metadata	    | Array  | false    | Array of metadata values                      |
- | conversationUuid | String | false    | conversationUuid that is saved in the context |
+ | Parameter        | Type           | Required | Description                                                               |
+ | ---------------- | -------------- | -------- | ------------------------------------------------------------------------- |
+ | functionName     | String         | true     | "updateContact"                                                           |
+ | botUuid          | String         | true     | botUuid that is saved in the context                                      |
+ | contactId        | Number         | true     | contac id of the contact to update                                        |
+ | email            | String         | false    | new email of the contact                                                  |
+ | phone            | String         | false    | new phone of the contact                                                  |
+ | firstName        | String         | false    | new firstName of the contact                                              |
+ | lastName         | String         | false    | new lastName of the contact                                               |
+ | country          | String         | false    | new country of the contact                                                |
+ | customClientId   | String         | false    | new external custom id                                                    |
+ | isSubscriber     | Boolean        | false    | wheter the new contact is subscribed or not                               |
+ | facebookId       | String         | false    | facebookId (It is an internal value)                                      |
+ | instagramId      | String         | false    | instagramId (It is an internal value)                                     |
+ | mercadoLibreId   | String         | false    | ID de Mercado Libre                                                       |
+ | metadata         | Object\|Array  | false    | Datos adicionales. Puede ser `{ clave: valor }` o `[{ key, value }]`     |
+ | conversationUuid | String         | false    | conversationUuid that is saved in the context                             |
+ | asyncIntegration | Boolean        | false    | If true will run asynchronous the integration                             |
 
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
 **Note:** Metadata is an array of metadata values like: {key: 'vtex_id', type: 'string', value: '2kl312-312-dfdfs-e12123'}
