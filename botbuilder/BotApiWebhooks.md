@@ -101,12 +101,12 @@
  ___
 ### updateTicket
  #### Parameters
- | Parameter        | Type   | Description                                       |
- | ---------------  | ------ | ------------------------------------------------- |
- | functionName     | String | "updateTicket"                                    |
- | ticket           | Object | ticket object*                                    |
- | ticketUuid       | String | ticket Uuid (ticketUuid or ticketFid is required) |
- | ticketFid        | String | ticket Fid (ticketUuid or ticketFid is required)  |
+ | Parameter        | Type   | Required               | Description                                       |
+ | ---------------  | ------ | ---------------------- | ------------------------------------------------- |
+ | functionName     | String | true                   | "updateTicket"                                    |
+ | ticket           | Object | true                   | ticket object*                                    |
+ | ticketUuid       | String | true (or `ticketFid`)  | ticket Uuid                                       |
+ | ticketFid        | String | true (or `ticketUuid`) | ticket Fid                                        |
 
 ##### *Ticket Object:
  | Property        | type   | Description                                      |
