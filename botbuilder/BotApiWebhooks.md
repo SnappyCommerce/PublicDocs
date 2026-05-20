@@ -362,9 +362,12 @@
  #### Result Example
  ```json
 	{
-		"onlineAssistants": 1
+		"onlineAssistants": 1,
+		"inSchedule": true
 	}
  ```
+> `inSchedule: true` significa que la tienda está dentro del horario de atención configurado, independientemente de si hay agentes conectados.
+
  ---
  ### getOrderInvoice
  #### Parameters
