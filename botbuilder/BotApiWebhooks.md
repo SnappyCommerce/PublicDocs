@@ -189,22 +189,23 @@
  ---
  ### createContact 
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "createContact"                               |
- | botUuid          | String | true     | botUuid that is saved in the context          |
- | email            | String | false    | email of the new contact                      |
- | phone            | String | false    | phone of the new contact                      |
- | facebookId       | String | false    | facebookId (It is an internal value)          |
- | instagramId      | String | false    | instagramId (It is an internal value)         |
- | firstName        | String | false    | firstName of the new contact                  |
- | lastName         | String | false    | lastName of the new contact                   |
- | country          | String | false    | country of the new contact                    |
- | isSubscriber     | Boolean| false    | wheter the new contact is subscribed or not   |
- | customContactId  | String | false    | External custom id                            |
- | metadata	    | Array  | false    | Array of metadata values                      |
- | conversationUuid | String | false    | conversationUuid that is saved in the context |
- | asyncIntegration | Boolean| If true will  run asynchronous the integration |
+ | Parameter        | Type           | Required | Description                                                               |
+ | ---------------- | -------------- | -------- | ------------------------------------------------------------------------- |
+ | functionName     | String         | true     | "createContact"                                                           |
+ | botUuid          | String         | true     | botUuid that is saved in the context                                      |
+ | email            | String         | false    | email of the new contact                                                  |
+ | phone            | String         | false    | phone of the new contact                                                  |
+ | firstName        | String         | false    | firstName of the new contact                                              |
+ | lastName         | String         | false    | lastName of the new contact                                               |
+ | country          | String         | false    | country of the new contact                                                |
+ | isSubscriber     | Boolean        | false    | wheter the new contact is subscribed or not                               |
+ | customClientId   | String         | false    | External custom id                                                        |
+ | facebookId       | String         | false    | facebookId (It is an internal value)                                      |
+ | instagramId      | String         | false    | instagramId (It is an internal value)                                     |
+ | mercadoLibreId   | String         | false    | ID de Mercado Libre                                                       |
+ | metadata         | Object\|Array  | false    | Datos adicionales. Puede ser `{ clave: valor }` o `[{ key, value }]`     |
+ | conversationUuid | String         | false    | conversationUuid that is saved in the context                             |
+ | asyncIntegration | Boolean        | false    | If true will run asynchronous the integration                             |
 
 **Note:** webhook call should have at least a mail, phone, facebookId or instagramId
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
