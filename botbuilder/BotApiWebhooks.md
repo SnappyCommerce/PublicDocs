@@ -151,16 +151,19 @@
  ___
  ### retrieveContact
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "retrieveContact"                             |
- | botUuid          | String | true     | botUuid that is saved in the context          |
- | email            | String | false    | email of the contact to be retrieved          |
- | phone            | String | false    | phone of the contact to be retrieved          |
- | contactUuid      | String | false    | retrieve a specific contact                   |
- | facebookId       | String | false    | facebookId (It is an internal value)          |
- | instagramId      | String | false    | instagramId (It is an internal value)         |
- | conversationUuid | String | false    | conversationUuid that is saved in the context |
+ | Parameter                | Type   | Required | Description                                                   |
+ | ------------------------ | ------ | -------- | ------------------------------------------------------------- |
+ | functionName             | String | true     | "retrieveContact"                                             |
+ | botUuid                  | String | true     | botUuid that is saved in the context                          |
+ | email                    | String | false    | email of the contact to be retrieved                          |
+ | phone                    | String | false    | phone of the contact to be retrieved                          |
+ | contactId                | Number | false    | ID interno del contacto                                       |
+ | contactUuid              | String | false    | retrieve a specific contact                                   |
+ | facebookId               | String | false    | facebookId (It is an internal value)                          |
+ | instagramId              | String | false    | instagramId (It is an internal value)                         |
+ | mercadoLibreId           | String | false    | ID de Mercado Libre                                           |
+ | conversationUuid         | String | false    | conversationUuid that is saved in the context                 |
+ | contactConversationUuid  | String | false    | UUID de otra conversación para buscar su contacto asociado    |
 
 **Note:** webhook call should have at least a mail or a phone
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
