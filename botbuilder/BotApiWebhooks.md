@@ -1341,6 +1341,30 @@ Versión inteligente de `fetchBranches`. Interpreta la consulta para detectar in
 
 ---
 
+### fetchSurvey
+
+Obtiene la encuesta de satisfacción configurada para la conversación. Detecta automáticamente si corresponde la encuesta de bot o la de agente humano.
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                           |
+ | ---------------- | ------ | -------- | ------------------------------------- |
+ | functionName     | String | true     | "fetchSurvey"                         |
+ | botUuid          | String | true     | botUuid that is saved in the context  |
+ | conversationUuid | String | true     | UUID de la conversación               |
+
+#### Result Example
+```json
+{
+	"survey": {
+		"id": 1,
+		"uuid": "...",
+		"questions": [ { "...": "..." } ]
+	}
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
