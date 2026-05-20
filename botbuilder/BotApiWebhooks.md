@@ -572,7 +572,7 @@
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "gerOrdersById"                               |
+ | functionName     | String |   true   | "getOrdersById"                               |
  | botUuid          | String |   true   | botUuid that is saved in the context          |
  | query       | String |   false  | the query that is needed to get the order (it can be an user id or some other thing depending on each integration)                     |
 
