@@ -1410,6 +1410,27 @@ Registra un comentario de texto libre sobre la atención (complementa a `answerS
 
 ---
 
+### assignTopicsToConversation
+
+Asigna un topic (etiqueta temática) a la conversación. El topic debe existir y pertenecer a la tienda.
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                          |
+ | ---------------- | ------ | -------- | ------------------------------------ |
+ | functionName     | String | true     | "assignTopicsToConversation"         |
+ | botUuid          | String | true     | botUuid that is saved in the context |
+ | conversationUuid | String | true     | UUID de la conversación              |
+ | topicKey         | String | true     | clave única del topic                |
+
+#### Result Example
+```json
+{
+	"currentConversationTopics": [ { "uuid": "..." } ]
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
