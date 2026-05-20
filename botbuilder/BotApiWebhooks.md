@@ -179,10 +179,13 @@
 		"country":  null,
 		"isSubscriber":  false,
 		"verificated":  true,
-		"censoredPhone":  "*****5789"
+		"censoredPhone":  "*****5789",
+		"tickets": [ { "...": "..." } ]
 	}
 }
  ```
+> Si no se encuentra contacto, `contact` es `null`.
+
  ---
  ### createContact 
  #### Parameters
