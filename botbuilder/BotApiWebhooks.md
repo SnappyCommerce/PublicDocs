@@ -1233,7 +1233,10 @@
 | providerName | String | true     | Name of providers that wants to be executed         |
 | parameters   | Object | false    | parameters that are needed to execute the provider  |
 
-The only providerName allowed is "accountInformation" at the moment
+**Providers permitidos:**
+- `accountInformation` — información de la cuenta de la tienda
+- `facets` — facetas/filtros disponibles para productos
+- `getProductBranches` — sucursales con stock de un producto
 
 #### Result Example
 
