@@ -810,14 +810,15 @@
  | conversationUuid | String |   false  | optional to create checkout by conversation   |
  | cartId           | String |   false  | optional to create checkout by cart id        |
  | shippingData     | object |   true   | snappyShippingData                            |
+ | notes            | String |   false  | order notes                                   |
 
 
  #### snappyShippingData example
  ```json
 {
-  "firstName": "JuanoCruz", //required 
-  "lastName": "Silva", //required
-  "email": "test@testing.com" //required 
+  "firstName": "JuanoCruz",
+  "lastName": "Silva",
+  "email": "test@testing.com",
   "street": "Av.Corrientes",
   "number": "1234",
   "floor": "1",
