@@ -324,9 +324,9 @@
 	"city": "Luján",
 	"street": "Calle Falsa",
 	"number": "4321",
-	"floor": "floor 3, room 4", // optional
+	"floor": "floor 3, room 4",
 	"postalCode": "1234",
-	"notes": "The building is pale blue, you'll find it easily", // optional
+	"notes": "The building is pale blue, you'll find it easily"
 }
 ```
 
