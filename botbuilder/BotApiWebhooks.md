@@ -917,7 +917,8 @@
  | ---------------- | -------- | ---------| ----------------------------------------------------------------------------------------- |
  | functionName     | String   |   true   | "fetchKnowledges"                                                                         |
  | botUuid          | String   |   true   | botUuid that is saved in the context                                                      |
- | query            | String   |   true   | words you wanna search by                                                                 |
+ | query            | String   | true (or `key`) | words you wanna search by                                                          |
+ | key              | String   | true (or `query`) | UUID of a specific article                                                        |
  | amount           | Number   |   false  | amount of knowledges on the response                                                      |
  | maxDistance      | Number   |   false  | Max distance for the responses                                                            |
  | chunks           | Number   |   false  | Amount of chunks to bring around the matched one                                          |
