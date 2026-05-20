@@ -977,6 +977,7 @@
  | address          | String |   false  | Order results by closest to the address |
  | point            | Object |   false  | Order results by closest to the point |
  | country          | String |   false  | Two letter ISO 3166-1 country code. Only applies when address is provided |
+ | categories       | String[] |  false  | Filter branches by the provided categories    |
 
 >[!NOTE]
 >To fetch by point, parameter "point" would need the following format: { "lat": -40.123123, "lng": -50.12314 } with its values being of type "number".
