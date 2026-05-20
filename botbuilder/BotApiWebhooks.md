@@ -50,13 +50,13 @@
  ---
 ### createTicket
  #### Parameters
- | Parameter        | Type   | Description                                    |
- | ---------------  | ------ | ---------------------------------------------- |
- | functionName     | String | "createTicket"                                 |
- | botUuid          | String | botUuid that is saved in the context           |
- | conversationUuid | String | conversationUuid that is saved in the context  |
- | ticket           | Object | ticket object*                                 |
- | asyncIntegration | Boolean| If true will  run asynchronous the integration |
+ | Parameter        | Type    | Required | Description                                                            |
+ | ---------------  | ------- | -------- | ---------------------------------------------------------------------- |
+ | functionName     | String  | true     | "createTicket"                                                         |
+ | botUuid          | String  | true     | botUuid that is saved in the context                                   |
+ | conversationUuid | String  | true     | conversationUuid that is saved in the context                          |
+ | ticket           | Object  | true     | ticket object*                                                         |
+ | asyncIntegration | Boolean | false    | If true will run asynchronous the integration                          |
 
 ##### *Ticket Object:
  | Property        | type   | Description                                      |
