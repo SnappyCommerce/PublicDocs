@@ -1049,7 +1049,9 @@
  | onlyActive       | Boolean  |   false  | Only fetch promotions that are currenlty active. Default is `true` |
  | validToday       | Boolean  | false    | Only fetch promotions that applies for today. Default is `false` |
  | days             | String[] | false    | Filter promotions by the provided days |
- | categories		| String[] | false	  | Filter promotions by the provided categories |
+ | categories		        | String[] | false	  | Filter promotions by the provided categories              |
+ | branches                       | String[] | false    | Filter promotions by the provided branches                |
+ | includePromotionsWithoutBranch | Boolean  | false    | Include promotions with no branch assigned (default: `false`) |
  
  >[!NOTE]
  >Valid days are `'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'`
