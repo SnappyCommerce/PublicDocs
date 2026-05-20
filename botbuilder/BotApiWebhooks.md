@@ -1317,6 +1317,30 @@ Agrega preferencias a un contacto (acumulativas). El sistema fusiona los nuevos 
 
 ---
 
+### smartBranches
+
+Versión inteligente de `fetchBranches`. Interpreta la consulta para detectar intención (retiro, envío, etc.) y aplica un threshold de relevancia.
+
+#### Parameters
+ | Parameter    | Type     | Required | Description                              |
+ | ------------ | -------- | -------- | ---------------------------------------- |
+ | functionName | String   | true     | "smartBranches"                          |
+ | botUuid      | String   | true     | botUuid that is saved in the context     |
+ | query        | String   | true     | texto con la consulta del usuario        |
+ | threshold    | Number   | false    | score mínimo de relevancia (0-1)         |
+ | country      | String   | false    | país                                     |
+ | type         | String   | false    | tipo de sucursal                         |
+ | maxPlaces    | Number   | false    | cantidad máxima de resultados            |
+
+#### Result Example
+```json
+{
+	"branches": [ { "...": "..." } ]
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
