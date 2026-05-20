@@ -1285,6 +1285,38 @@
 
 ---
 
+### updateContactPreferences
+
+Agrega preferencias a un contacto (acumulativas). El sistema fusiona los nuevos valores con los existentes en `metadata.preferences`. Soporta deduplicación por `_id` para evitar registrar la misma preferencia dos veces.
+
+> La respuesta es inmediata — el procesamiento ocurre en segundo plano.
+
+#### Parameters
+ | Parameter    | Type   | Required | Description                                                          |
+ | ------------ | ------ | -------- | -------------------------------------------------------------------- |
+ | functionName | String | true     | "updateContactPreferences"                                           |
+ | botUuid      | String | true     | botUuid that is saved in the context                                 |
+ | contactId    | Number | true     | ID del contacto                                                      |
+ | value        | Object | true     | Preferencias a agregar. Puede incluir `_id` para deduplicación       |
+
+**Ejemplo de `value`:**
+```json
+{
+	"_id": "pref-uuid-123",
+	"colores": ["rojo", "azul"],
+	"talles": ["M"]
+}
+```
+
+#### Result Example
+```json
+{
+	"response": {}
+}
+```
+
+---
+
  # Webhook Output
  Now you can call a webhook as an output
  ```js
