@@ -50,13 +50,13 @@
  ---
 ### createTicket
  #### Parameters
- | Parameter        | Type   | Description                                    |
- | ---------------  | ------ | ---------------------------------------------- |
- | functionName     | String | "createTicket"                                 |
- | botUuid          | String | botUuid that is saved in the context           |
- | conversationUuid | String | conversationUuid that is saved in the context  |
- | ticket           | Object | ticket object*                                 |
- | asyncIntegration | Boolean| If true will  run asynchronous the integration |
+ | Parameter        | Type    | Required | Description                                                            |
+ | ---------------  | ------- | -------- | ---------------------------------------------------------------------- |
+ | functionName     | String  | true     | "createTicket"                                                         |
+ | botUuid          | String  | true     | botUuid that is saved in the context                                   |
+ | conversationUuid | String  | true     | conversationUuid that is saved in the context                          |
+ | ticket           | Object  | true     | ticket object*                                                         |
+ | asyncIntegration | Boolean | false    | If true will run asynchronous the integration                          |
 
 ##### *Ticket Object:
  | Property        | type   | Description                                      |
@@ -101,12 +101,12 @@
  ___
 ### updateTicket
  #### Parameters
- | Parameter        | Type   | Description                                       |
- | ---------------  | ------ | ------------------------------------------------- |
- | functionName     | String | "updateTicket"                                    |
- | ticket           | Object | ticket object*                                    |
- | ticketUuid       | String | ticket Uuid (ticketUuid or ticketFid is required) |
- | ticketFid        | String | ticket Fid (ticketUuid or ticketFid is required)  |
+ | Parameter        | Type   | Required               | Description                                       |
+ | ---------------  | ------ | ---------------------- | ------------------------------------------------- |
+ | functionName     | String | true                   | "updateTicket"                                    |
+ | ticket           | Object | true                   | ticket object*                                    |
+ | ticketUuid       | String | true (or `ticketFid`)  | ticket Uuid                                       |
+ | ticketFid        | String | true (or `ticketUuid`) | ticket Fid                                        |
 
 ##### *Ticket Object:
  | Property        | type   | Description                                      |
@@ -151,16 +151,19 @@
  ___
  ### retrieveContact
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "retrieveContact"                             |
- | botUuid          | String | true     | botUuid that is saved in the context          |
- | email            | String | false    | email of the contact to be retrieved          |
- | phone            | String | false    | phone of the contact to be retrieved          |
- | contactUuid      | String | false    | retrieve a specific contact                   |
- | facebookId       | String | false    | facebookId (It is an internal value)          |
- | instagramId      | String | false    | instagramId (It is an internal value)         |
- | conversationUuid | String | false    | conversationUuid that is saved in the context |
+ | Parameter                | Type   | Required | Description                                                   |
+ | ------------------------ | ------ | -------- | ------------------------------------------------------------- |
+ | functionName             | String | true     | "retrieveContact"                                             |
+ | botUuid                  | String | true     | botUuid that is saved in the context                          |
+ | email                    | String | false    | email of the contact to be retrieved                          |
+ | phone                    | String | false    | phone of the contact to be retrieved                          |
+ | contactId                | Number | false    | ID interno del contacto                                       |
+ | contactUuid              | String | false    | retrieve a specific contact                                   |
+ | facebookId               | String | false    | facebookId (It is an internal value)                          |
+ | instagramId              | String | false    | instagramId (It is an internal value)                         |
+ | mercadoLibreId           | String | false    | ID de Mercado Libre                                           |
+ | conversationUuid         | String | false    | conversationUuid that is saved in the context                 |
+ | contactConversationUuid  | String | false    | UUID de otra conversación para buscar su contacto asociado    |
 
 **Note:** webhook call should have at least a mail or a phone
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
@@ -176,29 +179,33 @@
 		"country":  null,
 		"isSubscriber":  false,
 		"verificated":  true,
-		"censoredPhone":  "*****5789"
+		"censoredPhone":  "*****5789",
+		"tickets": [ { "...": "..." } ]
 	}
 }
  ```
+> Si no se encuentra contacto, `contact` es `null`.
+
  ---
  ### createContact 
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "createContact"                               |
- | botUuid          | String | true     | botUuid that is saved in the context          |
- | email            | String | false    | email of the new contact                      |
- | phone            | String | false    | phone of the new contact                      |
- | facebookId       | String | false    | facebookId (It is an internal value)          |
- | instagramId      | String | false    | instagramId (It is an internal value)         |
- | firstName        | String | false    | firstName of the new contact                  |
- | lastName         | String | false    | lastName of the new contact                   |
- | country          | String | false    | country of the new contact                    |
- | isSubscriber     | Boolean| false    | wheter the new contact is subscribed or not   |
- | customContactId  | String | false    | External custom id                            |
- | metadata	    | Array  | false    | Array of metadata values                      |
- | conversationUuid | String | false    | conversationUuid that is saved in the context |
- | asyncIntegration | Boolean| If true will  run asynchronous the integration |
+ | Parameter        | Type           | Required | Description                                                               |
+ | ---------------- | -------------- | -------- | ------------------------------------------------------------------------- |
+ | functionName     | String         | true     | "createContact"                                                           |
+ | botUuid          | String         | true     | botUuid that is saved in the context                                      |
+ | email            | String         | false    | email of the new contact                                                  |
+ | phone            | String         | false    | phone of the new contact                                                  |
+ | firstName        | String         | false    | firstName of the new contact                                              |
+ | lastName         | String         | false    | lastName of the new contact                                               |
+ | country          | String         | false    | country of the new contact                                                |
+ | isSubscriber     | Boolean        | false    | wheter the new contact is subscribed or not                               |
+ | customClientId   | String         | false    | External custom id                                                        |
+ | facebookId       | String         | false    | facebookId (It is an internal value)                                      |
+ | instagramId      | String         | false    | instagramId (It is an internal value)                                     |
+ | mercadoLibreId   | String         | false    | ID de Mercado Libre                                                       |
+ | metadata         | Object\|Array  | false    | Datos adicionales. Puede ser `{ clave: valor }` o `[{ key, value }]`     |
+ | conversationUuid | String         | false    | conversationUuid that is saved in the context                             |
+ | asyncIntegration | Boolean        | false    | If true will run asynchronous the integration                             |
 
 **Note:** webhook call should have at least a mail, phone, facebookId or instagramId
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
@@ -227,21 +234,24 @@
 ---
  ### updateContact 
  #### Parameters
- | Parameter        | Type   | required | Description                                   |
- | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "updateContact"                               |
- | botUuid          | String | true     | botUuid that is saved in the context          |
- | contactId        | String | true     | contac id of the contact to update            |
- | email            | String | false    | new email of the contact                      |
- | phone            | String | false    | new phone of the contact                      |
- | facebookId       | String | false    | facebookId (It is an internal value)          |
- | instagramId      | String | false    | instagramId (It is an internal value)         |
- | firstName        | String | false    | new firstName of the contact                  |
- | lastName         | String | false    | new lastName of the contact                   |
- | country          | String | false    | new country of the contact                    |
- | isSubscriber     | Boolean| false    | wheter the new contact is subscribed or not   |
- | metadata	    | Array  | false    | Array of metadata values                      |
- | conversationUuid | String | false    | conversationUuid that is saved in the context |
+ | Parameter        | Type           | Required | Description                                                               |
+ | ---------------- | -------------- | -------- | ------------------------------------------------------------------------- |
+ | functionName     | String         | true     | "updateContact"                                                           |
+ | botUuid          | String         | true     | botUuid that is saved in the context                                      |
+ | contactId        | Number         | true     | contac id of the contact to update                                        |
+ | email            | String         | false    | new email of the contact                                                  |
+ | phone            | String         | false    | new phone of the contact                                                  |
+ | firstName        | String         | false    | new firstName of the contact                                              |
+ | lastName         | String         | false    | new lastName of the contact                                               |
+ | country          | String         | false    | new country of the contact                                                |
+ | customClientId   | String         | false    | new external custom id                                                    |
+ | isSubscriber     | Boolean        | false    | wheter the new contact is subscribed or not                               |
+ | facebookId       | String         | false    | facebookId (It is an internal value)                                      |
+ | instagramId      | String         | false    | instagramId (It is an internal value)                                     |
+ | mercadoLibreId   | String         | false    | ID de Mercado Libre                                                       |
+ | metadata         | Object\|Array  | false    | Datos adicionales. Puede ser `{ clave: valor }` o `[{ key, value }]`     |
+ | conversationUuid | String         | false    | conversationUuid that is saved in the context                             |
+ | asyncIntegration | Boolean        | false    | If true will run asynchronous the integration                             |
 
 **Note:** If conversationUuid is passed it will set the retrieved contact as the contact of the conversation
 **Note:** Metadata is an array of metadata values like: {key: 'vtex_id', type: 'string', value: '2kl312-312-dfdfs-e12123'}
@@ -314,9 +324,9 @@
 	"city": "Luján",
 	"street": "Calle Falsa",
 	"number": "4321",
-	"floor": "floor 3, room 4", // optional
+	"floor": "floor 3, room 4",
 	"postalCode": "1234",
-	"notes": "The building is pale blue, you'll find it easily", // optional
+	"notes": "The building is pale blue, you'll find it easily"
 }
 ```
 
@@ -352,9 +362,12 @@
  #### Result Example
  ```json
 	{
-		"onlineAssistants": 1
+		"onlineAssistants": 1,
+		"inSchedule": true
 	}
  ```
+> `inSchedule: true` significa que la tienda está dentro del horario de atención configurado, independientemente de si hay agentes conectados.
+
  ---
  ### getOrderInvoice
  #### Parameters
@@ -378,9 +391,11 @@
  | functionName        | String | "fetchProducts"                                 |
  | botUuid             | String | botUuid that is saved in the context            |
  | query               | String | Search products by key words                    |
- | categoryId          | String | Search products by category            	  |
+ | categoryId          | String | Search products by category                     |
  | subCategoryId       | String | Search products by sub category                 |
  | selectedCategory    | String | Search products by category (recommended)       |
+ | page                | Number | page number                                     |
+ | perPage             | Number | results per page                                |
 
  #### Result Example
  ```json
@@ -557,7 +572,7 @@
  #### Parameters
  | Parameter        | Type   | required | Description                                   |
  | ---------------- | ------ | ---------| --------------------------------------------- |
- | functionName     | String |   true   | "gerOrdersById"                               |
+ | functionName     | String |   true   | "getOrdersById"                               |
  | botUuid          | String |   true   | botUuid that is saved in the context          |
  | query       | String |   false  | the query that is needed to get the order (it can be an user id or some other thing depending on each integration)                     |
 
@@ -795,14 +810,15 @@
  | conversationUuid | String |   false  | optional to create checkout by conversation   |
  | cartId           | String |   false  | optional to create checkout by cart id        |
  | shippingData     | object |   true   | snappyShippingData                            |
+ | notes            | String |   false  | order notes                                   |
 
 
  #### snappyShippingData example
  ```json
 {
-  "firstName": "JuanoCruz", //required 
-  "lastName": "Silva", //required
-  "email": "test@testing.com" //required 
+  "firstName": "JuanoCruz",
+  "lastName": "Silva",
+  "email": "test@testing.com",
   "street": "Av.Corrientes",
   "number": "1234",
   "floor": "1",
@@ -901,7 +917,8 @@
  | ---------------- | -------- | ---------| ----------------------------------------------------------------------------------------- |
  | functionName     | String   |   true   | "fetchKnowledges"                                                                         |
  | botUuid          | String   |   true   | botUuid that is saved in the context                                                      |
- | query            | String   |   true   | words you wanna search by                                                                 |
+ | query            | String   | true (or `key`) | words you wanna search by                                                          |
+ | key              | String   | true (or `query`) | UUID of a specific article                                                        |
  | amount           | Number   |   false  | amount of knowledges on the response                                                      |
  | maxDistance      | Number   |   false  | Max distance for the responses                                                            |
  | chunks           | Number   |   false  | Amount of chunks to bring around the matched one                                          |
@@ -960,6 +977,7 @@
  | address          | String |   false  | Order results by closest to the address |
  | point            | Object |   false  | Order results by closest to the point |
  | country          | String |   false  | Two letter ISO 3166-1 country code. Only applies when address is provided |
+ | categories       | String[] |  false  | Filter branches by the provided categories    |
 
 >[!NOTE]
 >To fetch by point, parameter "point" would need the following format: { "lat": -40.123123, "lng": -50.12314 } with its values being of type "number".
@@ -1031,7 +1049,9 @@
  | onlyActive       | Boolean  |   false  | Only fetch promotions that are currenlty active. Default is `true` |
  | validToday       | Boolean  | false    | Only fetch promotions that applies for today. Default is `false` |
  | days             | String[] | false    | Filter promotions by the provided days |
- | categories		| String[] | false	  | Filter promotions by the provided categories |
+ | categories		        | String[] | false	  | Filter promotions by the provided categories              |
+ | branches                       | String[] | false    | Filter promotions by the provided branches                |
+ | includePromotionsWithoutBranch | Boolean  | false    | Include promotions with no branch assigned (default: `false`) |
  
  >[!NOTE]
  >Valid days are `'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'`
@@ -1118,7 +1138,7 @@
 | functionName | String | true     | "fetchCategories"                                   |
 | botUuid      | String | true     | botUuid that is saved in the context                |
 | query        | String | false    | Checks for categories that include the given string |
-| parentCategory | String | false | A parent category to get its children categories	 |
+| parentCategory | String/Number | false | A parent category to get its children categories |
 #### Result Example
 
 ```json
@@ -1213,7 +1233,10 @@
 | providerName | String | true     | Name of providers that wants to be executed         |
 | parameters   | Object | false    | parameters that are needed to execute the provider  |
 
-The only providerName allowed is "accountInformation" at the moment
+**Providers permitidos:**
+- `accountInformation` — información de la cuenta de la tienda
+- `facets` — facetas/filtros disponibles para productos
+- `getProductBranches` — sucursales con stock de un producto
 
 #### Result Example
 
@@ -1258,6 +1281,152 @@ The only providerName allowed is "accountInformation" at the moment
 		}
 	}
 ]
+```
+
+---
+
+### updateContactPreferences
+
+Agrega preferencias a un contacto (acumulativas). El sistema fusiona los nuevos valores con los existentes en `metadata.preferences`. Soporta deduplicación por `_id` para evitar registrar la misma preferencia dos veces.
+
+> La respuesta es inmediata — el procesamiento ocurre en segundo plano.
+
+#### Parameters
+ | Parameter    | Type   | Required | Description                                                          |
+ | ------------ | ------ | -------- | -------------------------------------------------------------------- |
+ | functionName | String | true     | "updateContactPreferences"                                           |
+ | botUuid      | String | true     | botUuid that is saved in the context                                 |
+ | contactId    | Number | true     | ID del contacto                                                      |
+ | value        | Object | true     | Preferencias a agregar. Puede incluir `_id` para deduplicación       |
+
+**Ejemplo de `value`:**
+```json
+{
+	"_id": "pref-uuid-123",
+	"colores": ["rojo", "azul"],
+	"talles": ["M"]
+}
+```
+
+#### Result Example
+```json
+{
+	"response": {}
+}
+```
+
+---
+
+### smartBranches
+
+Versión inteligente de `fetchBranches`. Interpreta la consulta para detectar intención (retiro, envío, etc.) y aplica un threshold de relevancia.
+
+#### Parameters
+ | Parameter    | Type     | Required | Description                              |
+ | ------------ | -------- | -------- | ---------------------------------------- |
+ | functionName | String   | true     | "smartBranches"                          |
+ | botUuid      | String   | true     | botUuid that is saved in the context     |
+ | query        | String   | true     | texto con la consulta del usuario        |
+ | threshold    | Number   | false    | score mínimo de relevancia (0-1)         |
+ | country      | String   | false    | país                                     |
+ | type         | String   | false    | tipo de sucursal                         |
+ | maxPlaces    | Number   | false    | cantidad máxima de resultados            |
+
+#### Result Example
+```json
+{
+	"branches": [ { "...": "..." } ]
+}
+```
+
+---
+
+### fetchSurvey
+
+Obtiene la encuesta de satisfacción configurada para la conversación. Detecta automáticamente si corresponde la encuesta de bot o la de agente humano.
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                           |
+ | ---------------- | ------ | -------- | ------------------------------------- |
+ | functionName     | String | true     | "fetchSurvey"                         |
+ | botUuid          | String | true     | botUuid that is saved in the context  |
+ | conversationUuid | String | true     | UUID de la conversación               |
+
+#### Result Example
+```json
+{
+	"survey": {
+		"id": 1,
+		"uuid": "...",
+		"questions": [ { "...": "..." } ]
+	}
+}
+```
+
+---
+
+### answerSurvey
+
+Registra la respuesta del usuario a la encuesta de satisfacción.
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                                          |
+ | ---------------- | ------ | -------- | ---------------------------------------------------- |
+ | functionName     | String | true     | "answerSurvey"                                       |
+ | botUuid          | String | true     | botUuid that is saved in the context                 |
+ | conversationUuid | String | true     | UUID de la conversación                              |
+ | rating           | Number | false    | puntaje de la encuesta                               |
+ | agentUuid        | String | false    | UUID del agente evaluado (si aplica)                 |
+ | integration      | String | false    | nombre de la integración destino                     |
+ | customValue      | Any    | false    | valor personalizado para encuestas con escala propia |
+
+#### Result Example
+```json
+{
+	"response": true
+}
+```
+
+---
+
+### ratingFeedback
+
+Registra un comentario de texto libre sobre la atención (complementa a `answerSurvey`).
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                          |
+ | ---------------- | ------ | -------- | ------------------------------------ |
+ | functionName     | String | true     | "ratingFeedback"                     |
+ | botUuid          | String | true     | botUuid that is saved in the context |
+ | conversationUuid | String | true     | UUID de la conversación              |
+ | feedback         | String | true     | texto del comentario                 |
+
+#### Result Example
+```json
+{
+	"response": true
+}
+```
+
+---
+
+### assignTopicsToConversation
+
+Asigna un topic (etiqueta temática) a la conversación. El topic debe existir y pertenecer a la tienda.
+
+#### Parameters
+ | Parameter        | Type   | Required | Description                          |
+ | ---------------- | ------ | -------- | ------------------------------------ |
+ | functionName     | String | true     | "assignTopicsToConversation"         |
+ | botUuid          | String | true     | botUuid that is saved in the context |
+ | conversationUuid | String | true     | UUID de la conversación              |
+ | topicKey         | String | true     | clave única del topic                |
+
+#### Result Example
+```json
+{
+	"currentConversationTopics": [ { "uuid": "..." } ]
+}
 ```
 
 ---
