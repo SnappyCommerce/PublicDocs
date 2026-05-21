@@ -697,9 +697,18 @@ Funcionalidades: productos · categorías · facetas
 #### 🔍 Búsqueda de productos
 
 ```bash
-curl -X GET \
-  "https://{url}/index.php/rest/V1/products?searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=%25{término}%25&searchCriteria[filter_groups][0][filters][0][condition_type]=like&searchCriteria[pageSize]=20" \
-  -H "Authorization: Bearer {accessToken}"
+curl --request POST \
+  --url 'https://YOUR_MAGENTO_URL/graphql' \
+  --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --header 'Store: YOUR_STORE_VIEW' \
+  --data '{
+    "query": "query ProductSearch($query: String, $filter: ProductAttributeFilterInput) { products(search: $query, pageSize: 20, filter: $filter) { items { sku name url_key url_suffix media_gallery { disabled url } description { html } meta_description short_description { html } price_range { minimum_price { final_price { value } regular_price { value } } } ... on ConfigurableProduct { variants { attributes { uid label code } product { sku media_gallery { url disabled } price_range { minimum_price { final_price { value } regular_price { value } } } } } } } total_count } }",
+    "variables": {
+      "query": "shirt",
+      "filter": {}
+    }
+  }'
 ```
 
 #### 🗂️ Categorías
