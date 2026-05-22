@@ -10,7 +10,7 @@
 2. [Cómo se actualizan los pedidos (Webhooks)](#webhooks)
 3. [Referencia de estados de Snappy](#estados-snappy)
 4. [Endpoints y curls por integración](#endpoints)
-   - VTEX · Shopify · Tienda Nube · WooCommerce · Mercado Pago · Mercado Libre · Shipnow · Magento 2.3 · Magento 2.4 · Bitrix24 · HubSpot · Salesforce · Zendesk · Freshdesk · Mailchimp · Doppler
+   - VTEX · Shopify · Tienda Nube · WooCommerce · Mercado Pago · Mercado Libre · Shipnow · Magento 2.3 · Magento 2.4 · Bitrix24 · HubSpot · Salesforce · Zendesk · Freshdesk · Mailchimp · Doppler · Perfit
 5. [Verificar webhook activo](#verificar-webhook)
 6. [Guía rápida de diagnóstico](#diagnostico)
 
@@ -979,6 +979,63 @@ curl -X PUT \
 curl -X GET "https://restapi.fromdoppler.com/accounts/{accountName}/lists" \
   -H "Authorization: token {apiKey}"
 ```
+
+---
+
+### 🎯 Perfit
+
+Funcionalidades: crear contacto · actualizar contacto · eliminar contacto · obtener listas
+
+**Variables:** `{accountName}`, `{apiKey}`, `{perfitContactId}`
+> Auth: `-H "Authorization: Bearer {apiKey}"`
+
+#### 👤 Crear contacto
+
+```bash
+curl -X POST "https://api.myperfit.com/v2/{accountName}/contacts" \
+  -H "Authorization: Bearer {apiKey}" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"{email}","firstName":"{nombre}","lastName":"{apellido}"}'
+```
+
+> ⚠️ El campo `email` es **obligatorio** para crear contactos.
+
+#### ✏️ Actualizar contacto
+
+```bash
+curl -X PUT "https://api.myperfit.com/v2/{accountName}/contacts/{perfitContactId}" \
+  -H "Authorization: Bearer {apiKey}" \
+  -H "Content-Type: application/json" \
+  -d '{"firstName":"{nombre}","lastName":"{apellido}","gender":"male","language":"es","customFields":{},"lists":[],"interests":[]}'
+```
+
+**Campos disponibles para actualizar:**
+- `firstName` — Nombre
+- `lastName` — Apellido
+- `gender` — Género (ej: `male`, `female`)
+- `language` — Idioma (ej: `es`, `en`)
+- `customFields` — Campos personalizados (objeto)
+- `lists` — IDs de listas (array)
+- `interests` — Intereses (array)
+
+#### 🗑️ Eliminar contacto
+
+```bash
+curl -X DELETE "https://api.myperfit.com/v2/{accountName}/contacts/{perfitContactId}" \
+  -H "Authorization: Bearer {apiKey}"
+```
+
+#### 📋 Obtener listas disponibles
+
+```bash
+curl -X GET "https://api.myperfit.com/v2/{accountName}/lists?offset=0&sortby=name&sortdir=asc" \
+  -H "Authorization: Bearer {apiKey}"
+```
+
+**Parámetros de query:**
+- `offset` — Desde qué registro comenzar (default: `0`)
+- `sortby` — Campo para ordenar (ej: `name`)
+- `sortdir` — Dirección del orden (`asc` o `desc`)
 
 ---
 
